@@ -77,7 +77,7 @@ const BestNearby = () => {
 
                 <h4 style={{ marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Best Nearby</h4>
 
-                <h5 style={{ color: "#7094A7", marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Resturents</h5>
+                <h5 style={{ marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Resturents</h5>
 
                 <div>
                     <Swiper

@@ -58,7 +58,7 @@ const ThingsToDo = () => {
 
                 <h4 style={{ marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Things To Do</h4>
 
-                <h5 style={{ color: "#7094A7", marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Attractions</h5>
+                <h5 style={{  marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Attractions</h5>
 
                 <div>
                 <Swiper

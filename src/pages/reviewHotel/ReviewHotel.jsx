@@ -11,7 +11,6 @@ import {
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { getAllAccomodations } from "../../../../backend/controller/AccommodationController";
 
 const ReviewHotel = () => {
   const [modalData, setModalData] = useState({

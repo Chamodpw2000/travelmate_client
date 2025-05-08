@@ -84,7 +84,7 @@ const GetYourGuid = () => {
 
                 <h4 style={{ marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Get Your Guid</h4>
 
-                <h5 style={{ color: "#7094A7", marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Get Guids Nearby</h5>
+                <h5 style={{  marginLeft: "90px", marginBottom: "50px", color: "#0A2E41", fontWeight: "bold" }}>Get Guids Nearby</h5>
 
                 <div>
                     <Swiper
