@@ -1,9 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import SearchBar from '../searchBar/SearchBar';
-import NavbarComponent from '../navbarComponent/NavbarComponent';
-import logo from '../../assets/logo.png';
-import SigninModal from '../signinModal/SigninModal';
+
 
 const Hero = () => {
     return (
