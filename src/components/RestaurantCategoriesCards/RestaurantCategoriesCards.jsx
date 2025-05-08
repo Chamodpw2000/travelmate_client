@@ -4,10 +4,16 @@ import './RestaurantCategoriesCards.css'
 import RestaurantCategoryCard from '../RestaurantCategoryCard/RestaurantCategoryCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import casual from '/casualdining.jpg'
+import daynight from '/daynight.jpg'
+import veg from '/veg.jpg'
+import outside from '/outside.jpg'
+import fine from '/finedining.jpg'
+
 
 const RestaurantCategoriesCards = () => {
 
-    let categories = ["DateNight", "Fine Dining", "Casual Dining", "Vegan & Veg", "Outside"];
+    let categories = [{name:"Casual Dining",image:casual}, {name:"Fine Dining",image:fine}, {name:"Day Night", image:daynight}, {name:"Vegan & Veg", image:veg}, {name:"Outside", image:outside}];
 
     return (
         <Container style={{ padding: '2rem' }}>
