@@ -66,7 +66,7 @@ const TransportPage = () => {
                 totaldays: moment.duration(moment(toDate, "DD-MM-YYYY").diff(moment(fromDate, "DD-MM-YYYY"))).asDays() + 1,
                 totalprice: vehical?.price * (moment.duration(moment(toDate, "DD-MM-YYYY").diff(moment(fromDate, "DD-MM-YYYY"))).asDays() + 1),
               }
-              axios.post('http://localhost:3000/transportation/addBooking',newBooking).then((res)=>{
+              axios.post('https://travelmate-backend-zuqb.onrender.com/transportation/addBooking',newBooking).then((res)=>{
                 Swal.fire('Booked!', 'Your vehicle has been booked successfully.', 'success');
                 window.location.href = '/';
 

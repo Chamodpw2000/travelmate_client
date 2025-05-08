@@ -96,7 +96,7 @@ const ReviewHotel = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/travelmate/addHotelReview",
+        "https://travelmate-backend-zuqb.onrender.com/travelmate/addHotelReview",
         reviewData
       );
       console.log("Review Submitted:", reviewData);

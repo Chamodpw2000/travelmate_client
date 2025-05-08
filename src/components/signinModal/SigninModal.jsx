@@ -62,7 +62,7 @@ const SigninModal = () => {
         try {
           // Send user data to your backend
           const backendResponse = await axios.post(
-            "http://localhost:3000/travelmate/signinwithgoogle",
+            "https://travelmate-backend-zuqb.onrender.com/travelmate/signinwithgoogle",
             res.data,
             {
               headers: {
@@ -123,14 +123,14 @@ const SigninModal = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:3000/travelmate/signinwithemailandpassword', { email, password });
+      const response = await axios.post('https://travelmate-backend-zuqb.onrender.com/travelmate/signinwithemailandpassword', { email, password });
       console.log(response.data);
 
       
 
       if (response.data.success) {
         localStorage.setItem('auth-token', response.data.token);
-        const user = await axios.get('http://localhost:3000/user/get-user', {
+        const user = await axios.get('https://travelmate-backend-zuqb.onrender.com/user/get-user', {
           headers: {
             'Authorization': `Bearer ${response.data.token}`
           }
@@ -162,7 +162,7 @@ const SigninModal = () => {
     setLoading(true);
     console.log(email, password);
     try {
-      const response = await axios.post('http://localhost:3000/travelmate/signupwithemailandpassword', { email, password });
+      const response = await axios.post('https://travelmate-backend-zuqb.onrender.com/travelmate/signupwithemailandpassword', { email, password });
 
       if (response.data.success) {
         console.log(response.data.id);

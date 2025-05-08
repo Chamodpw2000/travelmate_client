@@ -12,7 +12,7 @@ const CancledGuidBookings = () => {
     useEffect(() => {
         
         if (user) {
-            axios.get("http://localhost:3000/booking/getguidecancledbookings", {
+            axios.get("https://travelmate-backend-zuqb.onrender.com/booking/getguidecancledbookings", {
                 params: { email: user.email }
             })
             .then((res) => {

@@ -23,7 +23,7 @@ const AvailableGuidBookings = () => {
 
         if (result.isConfirmed) {
             try {
-                const response = await axios.put("http://localhost:3000/booking/cancleguidebooking", null, {
+                const response = await axios.put("https://travelmate-backend-zuqb.onrender.com/booking/cancleguidebooking", null, {
                     params: { id: bookingId },
                 });
 
@@ -56,7 +56,7 @@ const AvailableGuidBookings = () => {
     useEffect(() => {
         
         if (user) {
-            axios.get("http://localhost:3000/booking/getguidebookings", {
+            axios.get("https://travelmate-backend-zuqb.onrender.com/booking/getguidebookings", {
                 params: { email: user.email }
             })
             .then((res) => {

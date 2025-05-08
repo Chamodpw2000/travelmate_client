@@ -81,7 +81,7 @@ const ReviewRestaurant = () => {
         };
 
         try {
-            const response = await axios.post("http://localhost:3000/travelmate/addRestaurantReview", reviewData)
+            const response = await axios.post("https://travelmate-backend-zuqb.onrender.com/travelmate/addRestaurantReview", reviewData)
             console.log("Review Submitted:", reviewData);
             console.log(response.data);
             if (response.data.success) {

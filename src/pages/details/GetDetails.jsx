@@ -24,7 +24,7 @@ const GetDetails = () => {
     // Function to fetch profile data based on ID
     const getProfile = async (id) => {
         try {
-            const response = await axios.get(`http://localhost:3000/travelmate/getprofile/${id}`);
+            const response = await axios.get(`https://travelmate-backend-zuqb.onrender.com/travelmate/getprofile/${id}`);
             console.log(response.data);
             return response.data;
         } catch (error) {
@@ -58,7 +58,7 @@ const GetDetails = () => {
 
         try {
             // Post the updated profile data to the server
-            const response = await axios.post(`http://localhost:3000/travelmate/updateprofile/${id}`, profileData);
+            const response = await axios.post(`https://travelmate-backend-zuqb.onrender.com/travelmate/updateprofile/${id}`, profileData);
             console.log("Profile updated successfully", response.data);
             if(response.data.success){
                 localStorage.setItem('auth-token', response.data.token);

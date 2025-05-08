@@ -20,7 +20,7 @@ const CancledVehicleBookings = () => {
     useEffect(() => {
         
         if (user) {
-            axios.get("http://localhost:3000/transportation/getcancelBooking", {
+            axios.get("https://travelmate-backend-zuqb.onrender.com/transportation/getcancelBooking", {
                 params: { email: user.email }
             })
             .then((res) => {

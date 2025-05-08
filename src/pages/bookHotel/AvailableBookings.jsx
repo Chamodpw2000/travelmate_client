@@ -9,7 +9,7 @@ const AvailableBookings = () => {
 
     useEffect(() => {
         if (user) {
-            axios.get("http://localhost:3000/booking/getbookings", {
+            axios.get("https://travelmate-backend-zuqb.onrender.com/booking/getbookings", {
                 params: { email: user.email }
             })
             .then((res) => {

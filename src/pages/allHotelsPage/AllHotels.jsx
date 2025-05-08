@@ -17,7 +17,7 @@ const AllHotels = () => {
 
     useEffect(() => {
         try {
-            axios.get('http://localhost:3000/travelmate/allAccomodations')
+            axios.get('https://travelmate-backend-zuqb.onrender.com/travelmate/allAccomodations')
                 .then((response) => {
                     setAllAccommodations(response.data);
                     console.log("Accommodations:", response.data);
