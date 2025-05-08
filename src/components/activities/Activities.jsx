@@ -2,7 +2,7 @@ import React from 'react'
 import beach from "../../assets/Beachactivities.png"
 import { Button } from 'react-bootstrap'
 import logo from "../../assets/TravalMateLogo2.png"
-import surfing from "../../assets/surfing.png"
+import surfing from "../../assets/Surfing.png"
 import tekling from "../../assets/Tekling.png"
 import Hiking from "../../assets/Hiking.png"
 import food from "../../assets/Food.png"
