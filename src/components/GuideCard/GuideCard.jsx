@@ -16,7 +16,7 @@ const GuideCard = ({ id, name, description, area, languages, chargesPerDay, card
   return (
     <Link to={id ? `/guide/${id}` : "#"} style={{ textDecoration: 'none' }}>
       <Card style={{ width: '22rem', height: '600px' }} className="shadow-sm border-primary guide-card">
-        <div className="card-image-container">
+        <div className="card-image-container" style={{backgroundColor: '#C1EAF8'}}>
           <div className="profile-image-wrapper">
             <Image 
               src={cardImage || "https://picsum.photos/150"} 
