@@ -1,0 +1,132 @@
+/* Container styles */
+.trip-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title styles */
+.trip-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Image section */
+.trip-main-image {
+  margin-bottom: 20px;
+}
+
+.trip-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Description styles */
+.trip-about {
+  margin-bottom: 20px;
+}
+
+.trip-description {
+  font-size: 1.2rem;
+  color: #7094a7;
+  line-height: 1.6;
+}
+
+/* Main card container */
+.trip-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* Left section: Destinations */
+.trip-destinations {
+  flex: 1.3; /* Reduced width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center destinations */
+  gap: 10px;
+}
+
+.destination-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centered alignment */
+  position: relative;
+}
+
+.destination-icon {
+  color: #104D6C;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.destination-item span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #104D6C;
+}
+
+.dashed-line {
+  height: 30px;
+  border-left: 2px dashed #104D6C;
+  margin: 5px 0;
+}
+
+/* Right section: Details */
+.trip-details {
+  flex: 0.7; /* Increased width */
+  font-size: 1rem;
+  color: #7094a7;
+  text-align: left;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trip-duration {
+  font-size: 1.1rem;
+  color: #0a2e41;
+}
+.trip-otherInfo {
+  font-size: 0.8rem;
+  color: #7094a7;
+}
+
+.trip-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.trip-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ffc007db;
+  color: #0a2e41;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.trip-button:hover {
+  background-color: #f1d993db;
+}

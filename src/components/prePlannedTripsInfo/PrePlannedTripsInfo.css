@@ -1,0 +1,41 @@
+.accordion-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjust the height as needed */
+    color: #7094a7; /* Set font color for the entire accordion */
+  }
+  
+  .horizontal-accordion {
+    width: 100%; /* Reduce the width as needed */
+    max-width: 1200px; /* Max width for the accordion */
+    border: none; /* Remove borders */
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .accordion-header button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure the header takes full width */
+    border: none; /* Remove borders */
+    background: none; /* Remove background */
+    color: #7094a7; /* Ensure the header buttons inherit the font color */
+  }
+  
+  .accordion-body {
+    border: none; /* Remove borders */
+    color: #7094a7; /* Set font color for the accordion body */
+  }
+  
+  .phone-icon {
+    color: #104D6C; /* Example color for the phone icon */
+    margin-right: 8px; /* Space between the icon and the number */
+    vertical-align: middle; /* Align with the text */
+  }
+  

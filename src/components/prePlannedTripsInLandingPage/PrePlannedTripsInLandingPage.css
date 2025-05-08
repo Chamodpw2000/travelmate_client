@@ -1,0 +1,24 @@
+.pre-planned-trips-section {
+    background-color: #f8f9fa; 
+  }
+  
+  .pre-planned-trips-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Dark color for better readability */
+    text-align: left;
+  }
+  
+  /* Optional styling for shadow */
+.card-shadow {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  filter: blur(20px);
+  opacity: 0.6;
+  z-index: 0;
+  transform: scale(1.1);
+  border-radius: 5px;
+}

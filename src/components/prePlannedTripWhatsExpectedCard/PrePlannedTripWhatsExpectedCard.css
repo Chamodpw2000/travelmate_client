@@ -1,0 +1,52 @@
+.whatsExpected-card {
+    position: relative;
+    width: 400px; /* Card width */
+    height: 500px; /* Card height */
+    border-radius: 10px;
+    overflow: visible;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .whatsExpected-card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.25s ease-in-out; /* Smooth transition effect */
+  }
+  
+  .mainActivities {
+    position: absolute;
+    bottom: 10px; /* Position the boxes towards the bottom of the card */
+    left: -50px; /* Shift the boxes slightly to the right, half of their width will be outside the card */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .mainActivity {
+    width: 170px; /* Adjust the width to make the activity boxes smaller */
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #104D6C;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  .whatsExpected-card-container {
+    position: relative;
+    width: 360px; /* Slightly wider to account for overflow */
+    overflow: visible; /* Allow the activity boxes to overflow */
+  }
+  .main-container { width: 80%;
+     margin: 0 auto; /* Center the container horizontally */ 
+     display: flex; 
+     justify-content: center; 
+     align-items: center; 
+     height: 100vh; /* Full height of the viewport */ 
+    color: #7094a7;
+    font-size: 1.2rem;
+    }

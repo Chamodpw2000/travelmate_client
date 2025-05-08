@@ -1,0 +1,9 @@
+.destinationsinhome {
+    /* background-color: #f8f9fa; Light background for contrast */
+  }
+  
+  .destinationsinhome-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Dark color for better readability */
+  }

@@ -1,0 +1,105 @@
+.restaurant-main-section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 80%;
+    margin: auto;
+}
+
+.restaurant-details {
+    text-align: center; 
+    /* margin-top: 0px; */
+    padding: 10px; 
+
+}
+
+.images-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    gap: 20px;
+    width: 100%; 
+    margin-bottom: 0px;
+}
+
+.left-image,
+.right-image,
+.main-image,
+.bottom-images img {
+    border-radius: 10px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.left-image,
+.right-image {
+    height: 370px;
+    width: 100%;
+}
+
+.main-image {
+    height: 370px;
+    width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.left-image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.right-image {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.bottom-images {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bottom-images img {
+    width: calc(50% - 10px);
+    height: 150px;
+}
+
+/* Additional info in a row */
+.additional-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    text-align: center; 
+    margin-top: 10px; 
+    width: 100%; 
+}
+.info-item {
+    display: flex; 
+    align-items: center; 
+}
+
+.info-item p {
+    margin-left: 20px; 
+    /* margin: 0;  */
+    margin-bottom: 5px;
+}
+
+.info-item a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 0.5;
+}

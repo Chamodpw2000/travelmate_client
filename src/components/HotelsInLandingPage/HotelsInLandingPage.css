@@ -1,0 +1,26 @@
+.hotels-section {
+    background-color: #f8f9fa; /* Light background for contrast */
+  }
+  
+  .hotels-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333; /* Dark color for better readability */
+  }
+
+  .view-btn {
+    background: linear-gradient(45deg, #1E5580, #2A93D5);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: linear-gradient(45deg, #2A93D5, #1E5580);
+}

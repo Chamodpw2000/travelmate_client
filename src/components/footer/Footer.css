@@ -1,0 +1,13 @@
+.hover-effect {
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+    opacity: 1 !important;
+    transform: translateY(-2px);
+    color: #fff !important;
+}
+
+.rounded-4 {
+    border-radius: 1rem;
+}

@@ -1,0 +1,143 @@
+.tripPlanning {
+    display: flex;
+    padding: 5rem 8%;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    gap: 2rem;
+}
+
+.tripPlanning-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 2rem;
+}
+
+.ai-badge {
+    background: linear-gradient(45deg, #1E5580, #2A93D5);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    width: fit-content;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(42, 147, 213, 0.3);
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #1E5580;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.subtitle h2 {
+    font-size: 1.5rem;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.plan-trip-btn {
+    background: linear-gradient(45deg, #1E5580, #2A93D5);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plan-trip-btn:hover {
+    background: linear-gradient(45deg, #2A93D5, #1E5580);
+}
+
+.tripPlanning-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tripPlanning-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .subtitle h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tripPlanning {
+        flex-direction: column;
+        padding: 3rem 5%;
+        text-align: center;
+    }
+
+    .tripPlanning-left {
+        padding-right: 0;
+        align-items: center;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle h2 {
+        font-size: 1.2rem;
+    }
+
+    .plan-trip-btn {
+        padding: 0.8rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtitle h2 {
+        font-size: 1rem;
+    }
+
+    .ai-badge {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+.tripPlanning {
+    display: flex;
+    padding: 2rem 8%; /* Reduced from 5rem to 2rem */
+    min-height: 60vh; /* Reduced from 80vh to 60vh */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    gap: 1rem; /* Reduced from 2rem to 1rem */
+}
+
+/* Adjust vertical spacing */
+.ai-badge {
+    margin-bottom: 1rem; /* Reduced from 2rem to 1rem */
+}
+
+.main-title {
+    margin-bottom: 1rem; /* Reduced from 2rem to 1rem */
+}
+
+.plan-trip-btn {
+    margin-top: 1.5rem; /* Reduced from 3rem to 1.5rem */
+}

@@ -1,0 +1,36 @@
+.card-container {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+  }
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .badge-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+  
+  .card-title-overlay {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+  
+  .card-title-overlay h5 {
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  

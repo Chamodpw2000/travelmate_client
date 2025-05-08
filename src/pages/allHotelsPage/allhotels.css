@@ -1,0 +1,17 @@
+.hotel-image-container {
+    height: 200px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.hotel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.hotel-image:hover {
+    transform: scale(1.05);
+}

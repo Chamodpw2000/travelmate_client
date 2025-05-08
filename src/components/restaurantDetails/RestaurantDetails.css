@@ -1,0 +1,40 @@
+/* Rating Dots */
+.rating-dots {
+  gap: 4px; /* Add spacing between dots */
+  border: none; /* Ensure no borders are applied */
+  padding: 0; /* Remove padding if any */
+}
+
+.rating-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e0e0e0; /* Light gray for empty dots */
+  transition: transform 0.2s, background-color 0.3s ease;
+}
+
+.rating-dot.full {
+  background: linear-gradient(135deg, #ffcc00, #ffaa00); /* Gold gradient */
+}
+
+.rating-dot.half {
+  background: linear-gradient(to right, #ffcc00 50%, #e0e0e0 50%);
+}
+
+
+
+.rating-dot.empty:hover {
+  background-color: #d6d6d6; /* Change empty dot color on hover */
+}
+
+/* Remove borders from ListGroup Items */
+.ratings-list .list-group-item {
+  border: none; /* Remove borders */
+  padding: 0.5rem 0; /* Adjust spacing if necessary */
+}
+
+/* Card Styling */
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+}

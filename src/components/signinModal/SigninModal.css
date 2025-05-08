@@ -1,0 +1,17 @@
+.nav-signin{
+    border-radius: 50px;
+    padding: 10px 38px;
+    background: #fff;
+    color: #262626;
+}
+
+.modal-header {
+    border-bottom: none; /* Removes the horizontal line below the header */
+  }
+  
+  button.close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+  }
+

@@ -1,0 +1,17 @@
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 30%;
+    width: 60%; /* Set the width to 60% */
+    position: relative;
+    height: 0;
+    margin: 0 auto; /* Center the map */
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    border: 0;
+    height: 100%;
+    width: 100%; /* The iframe will fill the width of the .map-responsive container */
+    position: absolute;
+}

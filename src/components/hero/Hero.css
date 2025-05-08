@@ -1,0 +1,102 @@
+/* Hero.css */
+
+.banner-text p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.banner-text h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .banner-text p {
+        font-size: 1.2rem;
+    }
+
+    .banner-text h1 {
+        font-size: 2rem;
+    }
+}
+
+.hero-section {
+    height: 100vh;
+    background:url('../../assets/home.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+}
+
+.banner-text {
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.hero-tagline {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #2196F3, #00BCD4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+    margin-top: 30px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* .search-container:hover {
+    transform: scale(1.02);
+} */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-tagline {
+        font-size: 2rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-tagline {
+        font-size: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
