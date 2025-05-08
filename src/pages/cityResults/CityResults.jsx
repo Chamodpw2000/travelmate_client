@@ -26,7 +26,7 @@ const CityResults = () => {
 
 
 //   useEffect(() => {
-//     axios.get(`http://localhost:3000/travelmate/getcity/${id}`)
+//     axios.get(`https://travelmate-backend-zuqb.onrender.com/travelmate/getcity/${id}`)
     
     
 //         .then((res) => {

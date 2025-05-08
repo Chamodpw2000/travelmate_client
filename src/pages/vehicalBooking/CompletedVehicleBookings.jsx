@@ -20,7 +20,7 @@ const CompletedVehicleBookings = () => {
     useEffect(() => {
         
         if (user) {
-            axios.get("http://localhost:3000/transportation/getCompletedBooking", {
+            axios.get("https://travelmate-backend-zuqb.onrender.com/transportation/getCompletedBooking", {
                 params: { email: user.email }
             })
             .then((res) => {

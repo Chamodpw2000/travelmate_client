@@ -19,7 +19,7 @@ const ClientContextProvider = (props) => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/cities/getCities")
+            .get("https://travelmate-backend-zuqb.onrender.com/cities/getCities")
             .then((res) => {
                 setAllCities(res.data);
             })
@@ -28,7 +28,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get("http://localhost:3000/travelmate/getdata")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/getdata")
             .then((response) => {
                 // console.log("All Details:", response.data);
                 setAllDetails(response.data);
@@ -37,7 +37,7 @@ const ClientContextProvider = (props) => {
                 console.log("All Details fetch error:", error);
             });
 
-            axios.get("http://localhost:3000/transportation/getAllTransportServices")
+            axios.get("https://travelmate-backend-zuqb.onrender.com/transportation/getAllTransportServices")
             .then((response) => {
                 console.log("All Transport Services:", response.data);
                 setAllTransportServices(response.data);
@@ -47,7 +47,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get("http://localhost:3000/travelmate/allAccomodations")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/allAccomodations")
             .then((response) => {
                 // console.log("Accommodations:", response.data);
                 setAllAccommodations(response.data);
@@ -59,7 +59,7 @@ const ClientContextProvider = (props) => {
 
 
         axios
-            .get("http://localhost:3000/travelmate/gettravelmatefeedback")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/gettravelmatefeedback")
             .then((response) => {
                 // console.log("Feedback:", response.data);
                 setAllTravelMateFeedback(response.data);
@@ -69,7 +69,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get("http://localhost:3000/travelmate/allGuides")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/allGuides")
             .then((response) => {
                 // console.log("Guides:", response.data);
                 setAllGuides(response.data);
@@ -79,7 +79,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get("http://localhost:3000/travelmate/allRestaurants")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/allRestaurants")
             .then((response) => {
                 // console.log("Restaurants:", response.data);
                 setAllRestaurants(response.data);
@@ -89,7 +89,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get("http://localhost:3000/travelmate/allPrePlannedTrips")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/allPrePlannedTrips")
             .then((response) => {
                 // console.log("PrePlannedTrips:", response.data);
                 setAllPrePlannedTrips(response.data);
@@ -99,7 +99,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get("http://localhost:3000/travelmate/getAllRestaurantReviews")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/getAllRestaurantReviews")
             .then((response) => {
                 // console.log("Restaurant Reviews:", response.data);
                 setAllRestaurantReviews(response.data);
@@ -109,7 +109,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get("http://localhost:3000/travelmate/getAllHotelReviews")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/getAllHotelReviews")
             .then((response) => {
                 // console.log("Hotel Reviews:", response.data);
                 setAllHotelReviews(response.data);
@@ -119,7 +119,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get("http://localhost:3000/travelmate/getAllGuideReviews")
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/getAllGuideReviews")
             .then((response) => {
                 // console.log("Guide Reviews:", response.data);
                 setAllGuideReviews(response.data);
@@ -129,7 +129,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get('http://localhost:3000/travelmate/getAllRestaurantReviews')
+            .get('https://travelmate-backend-zuqb.onrender.com/travelmate/getAllRestaurantReviews')
             .then((response) => {
                 // console.log('Restaurant Reviews:', response.data);
                 setAllRestaurantReviews(response.data);
@@ -139,7 +139,7 @@ const ClientContextProvider = (props) => {
             });
 
         axios
-            .get('http://localhost:3000/travelmate/allDestinations')
+            .get('https://travelmate-backend-zuqb.onrender.com/travelmate/allDestinations')
             .then((response) => {
                 // console.log('All Destinations:', response.data);
                 setAllDestinations(response.data);

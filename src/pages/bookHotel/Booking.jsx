@@ -17,7 +17,7 @@ const Booking = ({ accName, roomName, roomCount, price, toDate, fromDate, daysCo
             confirmButtonText: "Yes, I Want !"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete("http://localhost:3000/booking/deletebooking", {
+                axios.delete("https://travelmate-backend-zuqb.onrender.com/booking/deletebooking", {
                     params: { id: id }
                 })
                 .then(window.location.reload())

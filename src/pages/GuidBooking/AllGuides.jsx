@@ -17,7 +17,7 @@ const AllGuides = () => {
 
     useEffect(() => {
         try {
-            axios.get('http://localhost:3000/travelmate/allGuides')
+            axios.get('https://travelmate-backend-zuqb.onrender.com/travelmate/allGuides')
                 .then((response) => {
                     setAllGuides(response.data);
                     console.log("Guides:", response.data);

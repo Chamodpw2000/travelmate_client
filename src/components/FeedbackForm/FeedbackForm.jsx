@@ -19,7 +19,7 @@ const FeedbackForm = () => {
         console.log(formContent);
 
         try {
-            const response = await axios.post('http://localhost:3000/travelmate/addtravelmatefeedback', formContent, {
+            const response = await axios.post('https://travelmate-backend-zuqb.onrender.com/travelmate/addtravelmatefeedback', formContent, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',

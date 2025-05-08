@@ -9,7 +9,7 @@ const CompletedBookings = () => {
 
     useEffect(() => {
         if (user) {
-            axios.get("http://localhost:3000/booking/getcombookings", {
+            axios.get("https://travelmate-backend-zuqb.onrender.com/booking/getcombookings", {
                 params: { email: user.email }
             })
             .then((res) => {

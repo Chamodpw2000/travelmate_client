@@ -79,7 +79,7 @@ console.log("user", user);
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/travelmate/addGuideReview",
+        "https://travelmate-backend-zuqb.onrender.com/travelmate/addGuideReview",
         reviewData
       );
       console.log("Review Submitted:", reviewData);

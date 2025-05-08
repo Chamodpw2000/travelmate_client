@@ -21,7 +21,7 @@ const UserProfile = () => {
             try {
                 setLoading(true);
                 console.log("User Profile Page Loaded");
-                const res = await axios.get('http://localhost:3000/user/get-user-from-email', {
+                const res = await axios.get('https://travelmate-backend-zuqb.onrender.com/user/get-user-from-email', {
                     params: { email }
                 });
                 console.log("=========================++++++++++++++++++++++++++++++++++");
@@ -143,7 +143,7 @@ const UserProfile = () => {
 
             console.log("Updated User Data:", updatedUser);
             
-            await axios.put('http://localhost:3000/user/update-user', updatedUser);
+            await axios.put('https://travelmate-backend-zuqb.onrender.com/user/update-user', updatedUser);
             
             setUser(updatedUser);
             setEditMode(false);

@@ -101,7 +101,7 @@ const PrePlannedTripBookingForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/travelmate/add-pre-planned-trip-bookings",
+        "https://travelmate-backend-zuqb.onrender.com/travelmate/add-pre-planned-trip-bookings",
         prePlannedTripBookingDetails
       );
 

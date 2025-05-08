@@ -68,7 +68,7 @@ const ConBookHotel = () => {
                     roomcount: parseInt(selectedValue)
                 };
 
-                axios.post("http://localhost:3000/booking/bookhotel", bookingData)
+                axios.post("https://travelmate-backend-zuqb.onrender.com/booking/bookhotel", bookingData)
                     .then(() => {
                         mySwal.fire("Booking Confirmed!", "Your stay has been successfully booked.", "success")
                             .then(() => {

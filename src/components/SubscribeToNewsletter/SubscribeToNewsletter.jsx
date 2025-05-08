@@ -47,7 +47,7 @@ const SubscribeToNewsletter = () => {
         if (!isValid.email || !isValid.name) return
         
         try {
-            const response = await axios.post('http://localhost:3000/travelmate/subscribetonewsletter', formData, {
+            const response = await axios.post('https://travelmate-backend-zuqb.onrender.com/travelmate/subscribetonewsletter', formData, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',

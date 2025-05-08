@@ -24,7 +24,7 @@ const AvailableVehicleBookings = () => {
 
         if (result.isConfirmed) {
             try {
-                const response = await axios.put("http://localhost:3000/booking/cancleguidebooking", null, {
+                const response = await axios.put("https://travelmate-backend-zuqb.onrender.com/booking/cancleguidebooking", null, {
                     params: { id: bookingId },
                 });
 
@@ -57,7 +57,7 @@ const AvailableVehicleBookings = () => {
     useEffect(() => {
         
         if (user) {
-            axios.get("http://localhost:3000/transportation/getBooking", {
+            axios.get("https://travelmate-backend-zuqb.onrender.com/transportation/getBooking", {
                 params: { email: user.email }
             })
             .then((res) => {
@@ -104,7 +104,7 @@ const AvailableVehicleBookings = () => {
 
             }
             try {
-                const response = await axios.put("http://localhost:3000/transportation/canclebooking", {
+                const response = await axios.put("https://travelmate-backend-zuqb.onrender.com/transportation/canclebooking", {
                     bookingData
                 })
 
