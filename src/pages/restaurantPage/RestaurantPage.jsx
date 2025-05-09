@@ -27,6 +27,8 @@ const RestaurantPage = () => {
                     mainCategory={restaurant.mainCategory}
                     category={restaurant.category}
                     priceRange={restaurant.priceRange}
+                    images={restaurant.images}
+                    miniDescription={restaurant.miniDescription}
                 />
                 <DisplayRestaurantReviews
                     id={id}

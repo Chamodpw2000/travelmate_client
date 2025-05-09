@@ -52,6 +52,8 @@ const RestaurantsInLandingPage = () => {
                 // imageSrc={restaurant.cardImage}
                 id={restaurant.id}
                 mainCategory={restaurant.mainCategory}
+                images={restaurant.images}
+                miniDescription={restaurant.miniDescription}
               />
             </SwiperSlide>
           ))}

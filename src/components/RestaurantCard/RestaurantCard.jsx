@@ -6,7 +6,7 @@ import { Card, Badge, Button } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
 import { ClientContext } from '../../context/ClientContext';
 
-const RestaurantCard = ({ id, type, name, restaurantName, mainCategory, priceRange, rating }) => {
+const RestaurantCard = ({ id, type, name, restaurantName, mainCategory, priceRange, rating , images , miniDescription}) => {
 
   const { allRestaurants } = useContext(ClientContext);
   const { allRestaurantReviews } = useContext(ClientContext);
@@ -30,7 +30,7 @@ const RestaurantCard = ({ id, type, name, restaurantName, mainCategory, priceRan
         <div style={{ position: 'relative' }}>
           <Card.Img
             variant="top"
-            src="https://picsum.photos/286/180"
+            src={images[0] ||"https://picsum.photos/286/180"}
             alt="Restaurant Image"
             style={{
               boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.15)',
@@ -40,6 +40,8 @@ const RestaurantCard = ({ id, type, name, restaurantName, mainCategory, priceRan
         </div>
         <Card.Body>
           <Card.Title>{name || restaurantName}</Card.Title>
+                    <Card.Text>{miniDescription}</Card.Text>
+
           <div className="d-flex align-items-center mb-2">
             {[...Array(5)].map((_, index) => (
               <FaStar
