@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const RestaurantCategoryCard = ({category}) => {
     return (
-      <Link to={`/restaurants/${category}`} style={{ textDecoration: 'none' }}>
+      <Link to={`/restaurants/${category.name}`} style={{ textDecoration: 'none' }}>
       <div className="card-container">
         <div className="card border-0 shadow-sm">
           <img

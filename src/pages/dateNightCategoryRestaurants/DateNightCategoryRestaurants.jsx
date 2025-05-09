@@ -11,7 +11,7 @@ const DateNightCategoryRestaurants = () => {
         headerText={"Whether it’s the intimate ambiance, candlelit tables, or breathtaking views, these restaurants create the perfect setting for an unforgettable evening with your special someone."}
       />
 
-      <TopRatedRestaurant restaurantType={"DateNight"} />
+      {/* <TopRatedRestaurant restaurantType={"DateNight"} /> */}
       <RestaurantsInCategoryPage restaurantType={"DateNight"} />
     </>
   )

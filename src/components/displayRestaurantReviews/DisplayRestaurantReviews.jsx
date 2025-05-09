@@ -86,7 +86,7 @@ const DisplayRestaurantReviews = ({ id }) => {
       </div>
     );
   };
-
+const user = JSON.parse(localStorage.getItem("user"));
   return (
     <>
       <Container>
@@ -113,14 +113,14 @@ const DisplayRestaurantReviews = ({ id }) => {
               </div>
             </div>
             <div className="d-flex">
-              <Link to={`/review/restaurants/${id}`} style={{ textDecoration: 'none' }}>
+             {user && <Link to={`/review/restaurants/${id}`} style={{ textDecoration: 'none' }}>
                 <Button
                   variant="dark"
                   className="me-2 rounded-pill px-4 py-2 fw-bold"
                   style={{ fontSize: '0.9rem' }}
                 >
                   Write a Review
-                </Button></Link>
+                </Button></Link>}
             </div>
           </div>
 

@@ -106,28 +106,28 @@ const NavbarComponent = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Nav.Link href="#" className="nav-item">Explore</Nav.Link>
+              {/* <Nav.Link href="#" className="nav-item">Explore</Nav.Link> */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Nav.Link href="#" className="nav-item">Packages</Nav.Link>
+              {/* <Nav.Link href="#" className="nav-item">Packages</Nav.Link> */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Nav.Link href="#" className="nav-item">Services</Nav.Link>
+              {/* <Nav.Link href="#" className="nav-item">Services</Nav.Link> */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Nav.Link href="/details" className="nav-item">More</Nav.Link>
+              {/* <Nav.Link href="/details" className="nav-item">More</Nav.Link> */}
             </motion.div>
             {localStorage.getItem("user") && (
             <Nav.Link href="/details" className="nav-item"><Link to={'/profile'} className='nav-item' style={{ textDecoration: "none" }}>Profile</Link></Nav.Link>
