@@ -35,7 +35,7 @@ const Activities = () => {
                                 </h1>
                             </div>
 
-                            <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                            {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                                 <Link to={'/beach-activities'} style={{ textDecoration: 'none' }}>
                                     <Button
                                         className=" px-4 py-1 border-0 rounded-pill"
@@ -49,7 +49,7 @@ const Activities = () => {
                                         </div>
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
 
                     </div>
@@ -68,7 +68,7 @@ const Activities = () => {
                                     Surfing                                </h1>
                             </div>
 
-                            <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                            {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                                 <Link to={'/surfing'} style={{ textDecoration: 'none' }}>
 
                                     <Button
@@ -83,7 +83,7 @@ const Activities = () => {
                                         </div>
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className=" mb-3 p-4 pt-5" style={{
@@ -99,7 +99,7 @@ const Activities = () => {
                                     Trekking                               </h1>
                             </div>
 
-                            <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                            {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                                 <Link to={'/trekking'} style={{ textDecoration: 'none' }}>
                                     <Button
                                         className="px-4 py-1 border-0 rounded-pill"
@@ -113,7 +113,7 @@ const Activities = () => {
                                         </div>
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ const Activities = () => {
                                 </h1>
                             </div>
 
-                            <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                            {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                                 <Link to={'/activities'} style={{ textDecoration: 'none' }}>
                                     <Button
                                         className="px-4 py-1 border-0 rounded-pill"
@@ -146,7 +146,7 @@ const Activities = () => {
                                         </div>
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
 
                     </div>
@@ -165,7 +165,7 @@ const Activities = () => {
                                     Surfing                                </h1>
                             </div>
 
-                            <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                            {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                                 <Link to={'/activities'} style={{ textDecoration: 'none' }}>
 
                                     <Button
@@ -180,7 +180,7 @@ const Activities = () => {
                                         </div>
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
                         <div className=" mb-3 p-4 pt-5" style={{
                             display: 'flex', flexDirection: 'column', height: "467px", width: "656px",
@@ -194,7 +194,7 @@ const Activities = () => {
                                     Trekking                               </h1>
                             </div>
 
-                            <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                            {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                                 <Link to={'/activities'} style={{ textDecoration: 'none' }}>
                                     <Button
                                         className="px-4 py-1 border-0 rounded-pill"
@@ -208,7 +208,7 @@ const Activities = () => {
                                         </div>
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -229,7 +229,7 @@ const Activities = () => {
                             Hiking                               </h1>
                     </div>
 
-                    <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                    {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                         <Link to={'/hiking'} style={{ textDecoration: 'none' }}>
                             <Button
                                 className="px-4 py-1 border-0 rounded-pill"
@@ -243,7 +243,7 @@ const Activities = () => {
                                 </div>
                             </Button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className=" d-xxl-none mb-3 p-4 pt-5 rounded-4" style={{
@@ -259,7 +259,7 @@ const Activities = () => {
                             Hiking                              </h1>
                     </div>
 
-                    <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                    {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                         <Link to={'/activities'} style={{ textDecoration: 'none' }}>
                             <Button
                                 className="px-4 py-1 border-0 rounded-pill"
@@ -273,7 +273,7 @@ const Activities = () => {
                                 </div>
                             </Button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Fourth Row - Food and Cultural Attractions */}
@@ -295,7 +295,7 @@ const Activities = () => {
                                     Food                             </h1>
                             </div>
 
-                            <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                            {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                                 <Link to={'/food'} style={{ textDecoration: 'none' }}>
                                     <Button
                                         className="px-4 py-1 border-0 rounded-pill"
@@ -309,7 +309,7 @@ const Activities = () => {
                                         </div>
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className=" mb-3 p-4 pt-5 rounded-4" style={{
@@ -325,7 +325,7 @@ const Activities = () => {
                                     Cultural Attractions                             </h1>
                             </div>
 
-                            <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                            {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                                 <Link to={'/activities'} style={{ textDecoration: 'none' }}>
                                     <Button
                                         className="px-4 py-1 border-0 rounded-pill"
@@ -339,7 +339,7 @@ const Activities = () => {
                                         </div>
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -356,7 +356,7 @@ const Activities = () => {
                             Food                           </h1>
                     </div>
 
-                    <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                    {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                         <Link to={'/activities'} style={{ textDecoration: 'none' }}>
                             <Button
                                 className="px-4 py-1 border-0 rounded-pill"
@@ -370,7 +370,7 @@ const Activities = () => {
                                 </div>
                             </Button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
 
 
@@ -388,7 +388,7 @@ const Activities = () => {
                         </h1>
                     </div>
 
-                    <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
+                    {/* <div style={{ marginTop: 'auto', marginLeft: "auto" }}>
                         <Link to={'/activities'} style={{ textDecoration: 'none' }}>
                             <Button
                                 className="px-4 py-1 border-0 rounded-pill"
@@ -402,7 +402,7 @@ const Activities = () => {
                                 </div>
                             </Button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

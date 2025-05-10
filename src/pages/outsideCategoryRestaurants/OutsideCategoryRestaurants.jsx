@@ -10,7 +10,7 @@ const OutsideCategoryRestaurants = () => {
             category={"Outside"}
             headerText={"Enjoy the fresh air and scenic views at these restaurants that offer outdoor dining options, perfect for soaking up the sun or dining under the stars."}
             />
-            <TopRatedRestaurant restaurantType={"Outside"}/>
+            {/* <TopRatedRestaurant restaurantType={"Outside"}/> */}
             <RestaurantsInCategoryPage restaurantType={"Outside"}/>
         </>
     )

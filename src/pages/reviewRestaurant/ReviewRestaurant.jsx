@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Container, Row, Col, Form, Button, Card, Modal } from "react-bootstrap";
 import { ClientContext } from "../../context/ClientContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const ReviewRestaurant = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
     const [modalData, setModalData] = useState({ show: false, title: '', message: '' });
 
     const { allRestaurants } = useContext(ClientContext);
@@ -12,7 +13,7 @@ const ReviewRestaurant = () => {
     const restaurant = allRestaurants.find((e) => e.id === parseInt(id));
 
     // Add new state for user name
-    const [userName, setUserName] = useState("");
+    const [userName, setUserName] = useState(user.firstName + " " + user.lastName);
     const [reviewTitle, setReviewTitle] = useState("");
     const [reviewBody, setReviewBody] = useState("");
     const [overallRating, setOverallRating] = useState(0);
@@ -61,7 +62,7 @@ const ReviewRestaurant = () => {
         else if (type === "value") setValueRating(index);
         else if (type === "atmosphere") setAtmosphereRating(index);
     };
-
+const navigater = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -90,6 +91,10 @@ const ReviewRestaurant = () => {
                     title: 'Success!',
                     message: 'Your review has been added successfully!',
                 });
+
+                setTimeout(() => {navigater(`/restaurants/${id}`);}, 2000); // Close the modal after 2 seconds
+
+
             }
             else {
                 alert("Error submitting review");
@@ -166,7 +171,7 @@ const ReviewRestaurant = () => {
                     <Row>
                         <Col md={4} className="px-4">
                             <Card className="border border-0">
-                                <Card.Img className='pt-4 px-4' variant="top" src="https://picsum.photos/500" alt="Cafe Chill" />
+                                <Card.Img className='pt-4 px-4' variant="top" src={restaurant.images[0]} alt="Cafe Chill" />
                                 <Card.Body>
                                     <Card.Title className='px-2 fw-bold'>{restaurant.restaurantName}</Card.Title>
                                     <Card.Text className='px-2'>{restaurant.address}</Card.Text>
@@ -180,11 +185,11 @@ const ReviewRestaurant = () => {
                                 <Col md={6}>
                                     <Form.Group className="mb-4">
                                         <Form.Label>Your Name
-                                            <span className="text-muted"> ({userName.length}/{maxNameLength}) </span></Form.Label>
+                                        </Form.Label>
                                         <Form.Control
                                             type="text"
                                             placeholder="Enter your name"
-                                            maxLength={maxNameLength}
+                           
                                             value={userName}
                                             onChange={(e) => setUserName(e.target.value)}
                                             required

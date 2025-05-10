@@ -72,7 +72,7 @@ const DisplayGuideReview = ({ guidId }) => {
     const fullDots = Math.max(0, Math.min(Math.floor(rating), maxDots)); // Clamp fullDots
     const halfDot = rating % 1 !== 0 && fullDots < maxDots; // Check for halfDot
     const emptyDots = Math.max(0, maxDots - fullDots - (halfDot ? 1 : 0)); // Ensure non-negative emptyDots
-
+const user = JSON.parse(localStorage.getItem("user"));
     return (
       <div className="rating-dots d-flex justify-content-end align-items-center">
         {/* Full Dots */}
@@ -88,6 +88,8 @@ const DisplayGuideReview = ({ guidId }) => {
       </div>
     );
   };
+
+  const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     <>
@@ -114,7 +116,7 @@ const DisplayGuideReview = ({ guidId }) => {
               </div>
             </div>
             <div className="d-flex">
-              <Link
+              {user && <Link
                 to={`/review/guides/${guidId}`}
                 style={{ textDecoration: "none" }}
               >
@@ -125,7 +127,7 @@ const DisplayGuideReview = ({ guidId }) => {
                 >
                   Write a Review
                 </Button>
-              </Link>
+              </Link>}
             </div>
           </div>
 

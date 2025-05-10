@@ -25,7 +25,7 @@ const AiTripPlanning = () => {
         </div>
         
         <button className="plan-trip-btn">
-          Plan a Trip with AI
+          Comming Soon !
         </button>
       </div>
 

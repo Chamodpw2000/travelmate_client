@@ -11,7 +11,7 @@ const FineDiningCategoryRestaurants = () => {
             headerText={"ndulge in exquisite culinary experiences where every detail, from the gourmet dishes to the impeccable service, is designed to leave you with lasting memories of luxury and refinement."}
             />
 
-            <TopRatedRestaurant restaurantType={"Fine Dining"}/>
+            {/* <TopRatedRestaurant restaurantType={"Fine Dining"}/> */}
             <RestaurantsInCategoryPage restaurantType={"Fine Dining"}/>
         </>
     )

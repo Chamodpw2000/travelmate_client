@@ -3,10 +3,10 @@ import { FaCar, FaChair, FaNutritionix, FaSuperpowers, FaTruck, FaUserFriends } 
 import { TbEngine } from "react-icons/tb";
 import { PiSeatFill } from "react-icons/pi";
 
+const VehicalCard = ({ vehicle, handleBooking, availableVehicals, availabilityChecked }) => {
+    console.log("available Vehicals in card", availableVehicals);
+    const user = JSON.parse(localStorage.getItem("user"));
 
-const VehicalCard = ({ vehicle, handleBooking, availableVehicals , availabilityChecked}) => {
-    console.log("available Vehicals in card" , availableVehicals);
-    
     return (
         <div className="col" key={vehicle.id}>
             <div className="card h-100 shadow-sm vehicle-card">
@@ -43,13 +43,11 @@ const VehicalCard = ({ vehicle, handleBooking, availableVehicals , availabilityC
                         <FaTruck className="fs-1 text-secondary" />
                     </div>
                 )}
-
                 <div className="card-body">
                     <div className="d-flex justify-content-between align-items-center mb-3">
                         <h4 className="card-title">{vehicle.brand} {vehicle.model}</h4>
                         <span className="badge bg-info">{vehicle.year}</span>
                     </div>
-
                     <div className="row mb-3 text-center g-2">
                         <div className="col-4">
                             <div className="border rounded p-2">
@@ -64,7 +62,7 @@ const VehicalCard = ({ vehicle, handleBooking, availableVehicals , availabilityC
                             <div className="border rounded p-2">
                                 <small className="d-block text-muted">Seats</small>
                                 <div className="d-flex align-items-center justify-content-center">
-                                    <PiSeatFill  className="me-1" />
+                                    <PiSeatFill className="me-1" />
                                     <strong>{vehicle.seates}</strong>
                                 </div>
                             </div>
@@ -76,50 +74,30 @@ const VehicalCard = ({ vehicle, handleBooking, availableVehicals , availabilityC
                             </div>
                         </div>
                     </div>
-
                     <p className="card-text">{vehicle.description}</p>
                 </div>
-
                 <div className="card-footer d-flex justify-content-between align-items-center bg-white">
                     <div>
                         <span className="fs-5 fw-bold text-primary">${vehicle.price}</span>
                         <span className="text-muted ms-1">/ Day</span>
                     </div>
-
-
-
-                    
-{availabilityChecked ? (
-    console.log("available Vehicals in card in rendering" , availableVehicals),
-    console.log("vehicle id in rendaring" , vehicle.id),
-
-    
-    
-    
-    availableVehicals?.includes(vehicle.id) ? (
-    
-        
-        <button className="btn btn-primary" onClick={() => handleBooking(vehicle)}>
-            Book Now
-        </button>
-    ) : (
-        <button className="btn btn-secondary" disabled>
-            Not Available
-        </button>
-    )
-) : (
-    <p>Please Check availability Before Book a vehical</p>
-)}
-                        
-
-
-
-
-
-
-
-
-
+                    {user ? (
+                        availabilityChecked ? (
+                            availableVehicals?.includes(vehicle.id) ? (
+                                <button className="btn btn-primary" onClick={() => handleBooking(vehicle)}>
+                                    Book Now
+                                </button>
+                            ) : (
+                                <button className="btn btn-secondary" disabled>
+                                    Not Available
+                                </button>
+                            )
+                        ) : (
+                            <p className="mb-0 text-warning">Please check availability first</p>
+                        )
+                    ) : (
+                        <p className="mb-0 text-danger">Please login to book</p>
+                    )}
                 </div>
             </div>
         </div>
