@@ -11,7 +11,7 @@ const CasualDiningCategoryRestaurants = () => {
         headerText={"These restaurants offer a laid-back atmosphere and a diverse menu of comfort foods, perfect for a casual meal with family and friends."}
       />
 
-      <TopRatedRestaurant restaurantType={"Casual Dining"} />
+      {/* <TopRatedRestaurant restaurantType={"Casual Dining"} /> */}
       <RestaurantsInCategoryPage restaurantType={"Casual Dining"} />
     </>
   )

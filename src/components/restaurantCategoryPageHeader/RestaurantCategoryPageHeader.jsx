@@ -4,6 +4,7 @@ import { Container, Row, Col, Button, Badge, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavbarComponent from '../navbarComponent/NavbarComponent';
 let categories = ["DateNight", "Fine Dining", "Casual Dining", "Vegan & Veg", "Outside"];
+import resturent from '/resturent.jpg'
 
 const RestaurantCategoryPageHeader = ({ category, headerText }) => {
   return (
@@ -12,7 +13,7 @@ const RestaurantCategoryPageHeader = ({ category, headerText }) => {
       <div
         className="d-flex align-items-center justify-content-center text-white"
         style={{
-          backgroundImage: "url('https://picsum.photos/1920/1080')",
+          backgroundImage: "url('/resturent.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '480px',

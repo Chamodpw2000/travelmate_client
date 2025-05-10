@@ -9,7 +9,7 @@ import {
   Card,
   Modal,
 } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const ReviewHotel = () => {
@@ -22,9 +22,14 @@ const ReviewHotel = () => {
   const { allAccommodations } = useContext(ClientContext);
   const { id } = useParams();
   const hotel = allAccommodations.find((e) => e.id === parseInt(id));
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const navigater = useNavigate();
+
+
 
   // Add new state for user name
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(user.firstName + " " + user.lastName);
   const [reviewTitle, setReviewTitle] = useState("");
   const [reviewBody, setReviewBody] = useState("");
   const [overallRating, setOverallRating] = useState(0);
@@ -106,6 +111,9 @@ const ReviewHotel = () => {
           title: "Success!",
           message: "Your review has been added successfully!",
         });
+
+        setTimeout(() => { navigater(`/accommodations/${id}`); }, 2000); // Close the modal after 2 seconds
+
       } else {
         alert("Error submitting review");
       }
@@ -144,7 +152,6 @@ const ReviewHotel = () => {
       selectedStayDuration !== "Select one"
     );
   };
-
   return (
     <>
       <Modal
@@ -186,7 +193,7 @@ const ReviewHotel = () => {
                   <Card.Img
                     className="pt-4 px-4"
                     variant="top"
-                    src="https://picsum.photos/500"
+                    src={hotel.images[0]}
                     alt="Hotel Marabedda"
                   />
                   <Card.Body>
@@ -205,15 +212,12 @@ const ReviewHotel = () => {
                     <Form.Group className="mb-4">
                       <Form.Label>
                         Your Name
-                        <span className="text-muted">
-                          {" "}
-                          ({userName.length}/{maxNameLength}){" "}
-                        </span>
+
                       </Form.Label>
                       <Form.Control
                         type="text"
                         placeholder="Enter your name"
-                        maxLength={maxNameLength}
+
                         value={userName}
                         onChange={(e) => setUserName(e.target.value)}
                         required

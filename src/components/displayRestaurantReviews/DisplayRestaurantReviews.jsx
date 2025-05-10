@@ -9,14 +9,13 @@ const ReviewCard = ({ userName, title, body, familyType, visitDate }) => {
     <Card className="mb-4 shadow-sm">
       <Card.Body>
         <div className="d-flex align-items-center mb-3">
-          <img
+          {/* <img
             src="https://via.placeholder.com/50"
             alt="User Avatar"
             className="rounded-circle me-3"
-          />
+          /> */}
           <div>
             <h6 className="mb-0">{userName}</h6>
-            <small className="text-muted">from Australia</small>
           </div>
         </div>
         {/* <div className="d-flex align-items-center mb-3">
@@ -87,7 +86,7 @@ const DisplayRestaurantReviews = ({ id }) => {
       </div>
     );
   };
-
+const user = JSON.parse(localStorage.getItem("user"));
   return (
     <>
       <Container>
@@ -114,14 +113,14 @@ const DisplayRestaurantReviews = ({ id }) => {
               </div>
             </div>
             <div className="d-flex">
-              <Link to={`/review/restaurants/${id}`} style={{ textDecoration: 'none' }}>
+             {user && <Link to={`/review/restaurants/${id}`} style={{ textDecoration: 'none' }}>
                 <Button
                   variant="dark"
                   className="me-2 rounded-pill px-4 py-2 fw-bold"
                   style={{ fontSize: '0.9rem' }}
                 >
                   Write a Review
-                </Button></Link>
+                </Button></Link>}
             </div>
           </div>
 
