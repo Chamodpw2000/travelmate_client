@@ -22,6 +22,7 @@ const Home = () => {
       <AiTripPlanning />
       <HotelsInLandingPage />
       <RestaurantsInLandingPage />
+      <PrePlannedTripsInLandingPage header="Explore the World with TravelMate" />
       <TransportServisersInLandingPage />
       <GuideList />
       <Activities />
