@@ -7,7 +7,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import "./PrePlannedTripsMainSection.css";
-import Galle_fort_image from "../../assets/GalleFortTour.png";
+import Galle_fort_image from "../../assets/GalleFortTour.png"; // Keep as fallback
 
 const PrePlannedTripsMainSection = ({
   name,
@@ -25,13 +25,25 @@ const PrePlannedTripsMainSection = ({
   contactNumber,
   rating,
   tripId,
+  mainImage, // Add this prop for the main image
 }) => {
+  // Use the provided main image or fall back to the default one
+  const displayImage = mainImage || Galle_fort_image;
+
   return (
     <div className="trip-section">
       {/* Title */}
       <h1 className="trip-title">{name}</h1>
       <div className="trip-main-image">
-        <img src={Galle_fort_image} alt={name} className="trip-img" />
+        <img 
+          src={displayImage} 
+          alt={name} 
+          className="trip-img"
+          onError={(e) => {
+            e.target.onerror = null; // Prevent infinite loop
+            e.target.src = Galle_fort_image; // Fallback to default image on error
+          }}
+        />
       </div>
       <div className="trip-about">
         <p className="trip-description">{description}</p>
@@ -52,9 +64,9 @@ const PrePlannedTripsMainSection = ({
         </div>
         {/* Right section: Details */}
         <div className="trip-details">
-          <p className="trip-available-days">
+          {/* <p className="trip-available-days">
             <FaCalendarAlt className="icon" /> Available Days: {availableDates}
-          </p>
+          </p> */}
           <p className="no-of-travelers">
             <FaUsers className="icon" /> No of Travelers: {noOfTravelers}
           </p>
@@ -68,7 +80,6 @@ const PrePlannedTripsMainSection = ({
             <FaMapMarkerAlt className="icon" />
             {endLocation}
           </p>
-
           <div className="trip-info">
             <span className="trip-duration">Duration: {duration} days</span>
             <span className="trip-price">From: ${price} per adult</span>

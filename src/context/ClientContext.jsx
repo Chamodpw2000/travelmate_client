@@ -16,8 +16,21 @@ const ClientContextProvider = (props) => {
     const [allRestaurantReviews, setAllRestaurantReviews] = useState([]);
     const [allDestinations, setAllDestinations] = useState([]);
     const [allTransportServices, setAllTransportServices] = useState([]);
+    const [allHospitals, setAllHospitals] = useState([]);
 
     useEffect(() => {
+
+
+        axios
+            .get("https://travelmate-backend-zuqb.onrender.com/travelmate/allHospitals")
+            .then((response) => {
+                setAllHospitals(response.data);
+            })
+            .catch((error) => {
+                console.log("Hospitals fetch error:", error);
+            });
+
+
         axios
             .get("https://travelmate-backend-zuqb.onrender.com/cities/getCities")
             .then((res) => {
@@ -37,7 +50,7 @@ const ClientContextProvider = (props) => {
                 console.log("All Details fetch error:", error);
             });
 
-            axios.get("https://travelmate-backend-zuqb.onrender.com/transportation/getAllTransportServices")
+        axios.get("https://travelmate-backend-zuqb.onrender.com/transportation/getAllTransportServices")
             .then((response) => {
                 console.log("All Transport Services:", response.data);
                 setAllTransportServices(response.data);
@@ -141,6 +154,8 @@ const ClientContextProvider = (props) => {
         axios
             .get('https://travelmate-backend-zuqb.onrender.com/travelmate/allDestinations')
             .then((response) => {
+       
+                
                 // console.log('All Destinations:', response.data);
                 setAllDestinations(response.data);
             })
@@ -150,6 +165,7 @@ const ClientContextProvider = (props) => {
     }, []);
 
     const contextValue = {
+        allHospitals,
         allAccommodations,
         allTravelMateFeedback,
         allGuides,

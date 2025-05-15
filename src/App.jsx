@@ -56,12 +56,19 @@ import AvailableVehicleBookings from './pages/vehicalBooking/AvailableVehicleBoo
 import CompletedVehicleBookings from './pages/vehicalBooking/CompletedVehicleBookings'
 import VehicleBookings from './pages/vehicalBooking/MyVehicleBookings'
 import CancledVehicleBookings from './pages/vehicalBooking/CancledVehicleBookings'
+import HospitalPage from './pages/hospitalPage/HospitalPage'
 
 
 function App() {
   return (
     <Router>
       <Routes>
+<Route element={<ClientLayout/>}/>
+        // For testing with dummy data
+<Route path="/hospital" element={<HospitalPage />} />
+
+// For real data with ID parameter
+<Route path="/hospital/:id" element={<HospitalPage />} />
         <Route element={<ClientLayout/>}>
           <Route path="/" element={<Home />} />
           <Route path="/details/:id" element={<GetDetails />} />
@@ -154,4 +161,4 @@ function App() {
   )
 }
 
-export default App
+export default App

@@ -3,7 +3,10 @@ import React from "react";
 import { Card, Badge, Button } from "react-bootstrap";
 import { FaHeart, FaStar } from "react-icons/fa";
 
-const PrePlannedTripCard = ({ id, type, name, price, duration, rating }) => {
+const PrePlannedTripCard = ({ id, type, name, price, duration, rating, mainImage }) => {
+  // Default image to use if mainImage is not provided
+  const defaultImage = "https://picsum.photos/286/180";
+  
   return (
     <Link to={`/pre-planned-trips/${id}`} style={{ textDecoration: "none" }}>
       <Card
@@ -17,14 +20,20 @@ const PrePlannedTripCard = ({ id, type, name, price, duration, rating }) => {
         <div style={{ position: "relative" }}>
           <Card.Img
             variant="top"
-            src="https://picsum.photos/286/180"
-            alt="Restaurant Image"
+            src={mainImage || defaultImage}
+            alt={`${name} Image`}
             style={{
-                boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1), 0px -10px 20px rgba(255, 255, 255, 0.9)", // Uniform shadow
+              boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1), 0px -10px 20px rgba(255, 255, 255, 0.9)", // Uniform shadow
               borderRadius: "5px",
+              height: "180px", // Fixed height for consistency
+              objectFit: "cover", // Ensure the image covers the area properly
+            }}
+            onError={(e) => {
+              e.target.onerror = null; // Prevent infinite loop
+              e.target.src = defaultImage; // Fallback to default image on error
             }}
           />
-          {/* <Button
+          <Button
             variant="light"
             style={{
               position: "absolute",
@@ -35,21 +44,26 @@ const PrePlannedTripCard = ({ id, type, name, price, duration, rating }) => {
             }}
           >
             <FaHeart style={{ color: "black" }} />
-          </Button> */}
+          </Button>
         </div>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <div className="d-flex align-items-center mb-2">
-            <FaStar style={{ color: "green" }} />
-            <FaStar style={{ color: "green" }} />
-            <FaStar style={{ color: "green" }} />
-            <FaStar style={{ color: "green" }} />
-            <FaStar style={{ color: "green" }} />
+            {/* Generate stars based on rating */}
+            {Array.from({ length: 5 }).map((_, index) => (
+              <FaStar 
+                key={index}
+                style={{ 
+                  color: index < Math.floor(rating) ? "green" : "gray" 
+                }} 
+              />
+            ))}
             <Badge bg="light" text="dark" className="ms-2">
-            {Math.floor(Math.random() * 10) + 1} Reviews
+              {rating}
             </Badge>
           </div>
           <Card.Text>${price} per person</Card.Text>
+          {duration && <Card.Text>Duration: {duration} days</Card.Text>}
         </Card.Body>
       </Card>
     </Link>
