@@ -18,7 +18,7 @@ const Home = () => {
     <>
       <Hero />
       <RestaurantCategoriesCards />
-      {/* <PrePlannedTripsInLandingPage header="Curated Journeys for You" /> */}
+      <PrePlannedTripsInLandingPage header="Curated Journeys for You" />
       <AiTripPlanning />
       <HotelsInLandingPage />
       <RestaurantsInLandingPage />

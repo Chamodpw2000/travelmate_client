@@ -20,7 +20,8 @@ const SearchBar = () => {
             const des = allDetails.destinations || [];
             const guids = allDetails.guids || [];
             const cities = allDetails.cities || [];
-            setData([...cities, ...acc, ...des, ...guids, ...transport]);
+            const hospitals = allDetails.hospitals || [];
+            setData([...cities, ...acc, ...des, ...guids, ...transport,...hospitals]);
         }
     }, [allDetails]);
 
@@ -44,7 +45,10 @@ const SearchBar = () => {
             navigate(`/guide/${dataId}`)
         }else if (type === "TransportationServices") {
             navigate(`/transportation/${dataId}`)
+        }else if (type === "Hospitals") {
+            navigate(`/hospital/${dataId}`)
         }
+
 
     };
 
