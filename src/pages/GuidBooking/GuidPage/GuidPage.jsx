@@ -45,12 +45,11 @@ const GuidPage = () => {
         );
     };
 
-    const readable = moment(guid?.birthDate).format('MMMM Do YYYY');
+    const readable = moment(guid?.birthDate).format('MMMM Do YYYY'); // comm 
 
     const checkAvailability = (newFromDate, newToDate, existingBookings) => {
         console.log(newFromDate, newToDate, existingBookings);
         
-        // Convert input dates to moment objects for better comparison
         const checkStart = moment(newFromDate, "DD-MM-YYYY");
         const checkEnd = moment(newToDate, "DD-MM-YYYY");
     

@@ -30,7 +30,7 @@ const ConGuidPage = () => {
                 {[...Array(5)].map((_, index) => (
                     <FaStar
                         key={index}
-                        className={`${index < rating ? 'text-warning' : 'text-muted'}`}
+                        className={`${index < rating ? 'text-warning' : 'text-muted'}`} //dededed
                         size={20}
                     />
                 ))}
@@ -38,9 +38,7 @@ const ConGuidPage = () => {
         );
     };
 
-    // const handleBookNow = () => {
-    //     navigator(`/guide-booking/${id}`);
-    // };
+
 
 
     const bookingHandler = () => {
