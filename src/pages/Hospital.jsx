@@ -34,7 +34,7 @@ const Hospital = () => {
         distanceFromNearestCity: "3.5 miles"
     };
     
-    // If no ID is provided in the URL, use dummy data
+    
     if (!id) {
         console.log('No ID provided, using dummy data for UI testing');
         return (
