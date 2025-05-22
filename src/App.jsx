@@ -56,20 +56,22 @@ import AvailableVehicleBookings from './pages/vehicalBooking/AvailableVehicleBoo
 import CompletedVehicleBookings from './pages/vehicalBooking/CompletedVehicleBookings'
 import VehicleBookings from './pages/vehicalBooking/MyVehicleBookings'
 import CancledVehicleBookings from './pages/vehicalBooking/CancledVehicleBookings'
-import HospitalPage from './pages/hospitalPage/HospitalPage'
+
+import Hospital from './pages/hospitals/Hospital'
+import Test from './pages/Hospital'
 
 
 function App() {
   return (
     <Router>
       <Routes>
-<Route element={<ClientLayout/>}/>
-        // For testing with dummy data
-<Route path="/hospital" element={<HospitalPage />} />
 
-// For real data with ID parameter
-<Route path="/hospital/:id" element={<HospitalPage />} />
-        <Route element={<ClientLayout/>}>
+
+
+        // For real data with ID parameter
+        <Route element={<ClientLayout />}>
+          <Route path="/hospital/:id" element={<Hospital />} />
+
           <Route path="/" element={<Home />} />
           <Route path="/details/:id" element={<GetDetails />} />
           <Route path="/footer" element={<Footer />} />
@@ -117,33 +119,33 @@ function App() {
           </Route>
 
 
-          <Route path="/guide/:id" element={<GuidPage/>} />
+          <Route path="/guide/:id" element={<GuidPage />} />
 
 
           <Route path="/review/restaurants/:id" element={<ReviewRestaurant />} />
           <Route path="/review/hotels/:id" element={<ReviewHotel />} />
 
           <Route path="/review/guides/:id" element={<ReviewGuide />} />
-          <Route path="/profile" element={<UserProfile/>} />
-          
+          <Route path="/profile" element={<UserProfile />} />
+
           <Route path="/allHotels" element={<AllHotels />} />
           <Route path="/myguidbookings" element={<MyGuidBookings />} >
-          <Route path="available" element={<AvailableGuidBookings />} />
-          <Route path="canclled" element={<CancledGuidBookings />} />
-          <Route path="completed" element={<CompletedGuidBookings />} />
+            <Route path="available" element={<AvailableGuidBookings />} />
+            <Route path="canclled" element={<CancledGuidBookings />} />
+            <Route path="completed" element={<CompletedGuidBookings />} />
 
 
 
-          
+
           </Route>
 
           <Route path="/allguides" element={<AllGuides />} />
 
           <Route path="/conguidebook" element={<ConGuidPage />} />
-          <Route path="/transportation/:transportationID" element={<TransportPage/>} />
+          <Route path="/transportation/:transportationID" element={<TransportPage />} />
 
 
-          <Route path="/myVehicleBooking" element={<VehicleBookings/>}>
+          <Route path="/myVehicleBooking" element={<VehicleBookings />}>
             <Route path="available" element={<AvailableVehicleBookings />} />
             <Route path="cancelled" element={<CancledVehicleBookings />} />
             <Route path="completed" element={<CompletedVehicleBookings />} />
@@ -155,10 +157,11 @@ function App() {
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
           <Route path="/payment-failed" element={<PaymentFailed />} />
+
         </Route>
       </Routes>
     </Router>
   )
 }
 
-export default App
+export default App

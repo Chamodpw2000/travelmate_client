@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { ClientContext } from '../../context/ClientContext';
 import { useParams } from 'react-router-dom';
-import HospitalDetails from '../../components/hospitalDetails/HospitalDetails';
+import { ClientContext } from '../context/ClientContext';
+import HospitalDetails from '../components/hospitalDetails/HospitalDetails';
 
 
 
-const HospitalPage = () => {
+const Hospital = () => {
 
 
 
@@ -34,7 +34,7 @@ const HospitalPage = () => {
         distanceFromNearestCity: "3.5 miles"
     };
     
-    // If no ID is provided in the URL, use dummy data
+    
     if (!id) {
         console.log('No ID provided, using dummy data for UI testing');
         return (
@@ -84,7 +84,9 @@ const HospitalPage = () => {
             nearestCity={hospital.nearestCity}
             distanceFromNearestCity={hospital.distanceFromNearestCity}
         />
+
+  
     );
 };
 
-export default HospitalPage;
+export default Hospital;
