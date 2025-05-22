@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { ClientContext } from '../../context/ClientContext';
 import { useParams } from 'react-router-dom';
-import HospitalDetails from '../../components/hospitalDetails/HospitalDetails';
+import { ClientContext } from '../context/ClientContext';
+import HospitalDetails from '../components/hospitalDetails/HospitalDetails';
 
 
 
-const HospitalPage = () => {
+const Hospital = () => {
 
 
 
@@ -84,7 +84,9 @@ const HospitalPage = () => {
             nearestCity={hospital.nearestCity}
             distanceFromNearestCity={hospital.distanceFromNearestCity}
         />
+
+  
     );
 };
 
-export default HospitalPage;
+export default Hospital;
