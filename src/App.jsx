@@ -64,10 +64,10 @@ function App() {
     <Router>
       <Routes>
 <Route element={<ClientLayout/>}/>
-        // For testing with dummy data
+
 <Route path="/hospital" element={<HospitalPage />} />
 
-// For real data with ID parameter
+
 <Route path="/hospital/:id" element={<HospitalPage />} />
         <Route element={<ClientLayout/>}>
           <Route path="/" element={<Home />} />

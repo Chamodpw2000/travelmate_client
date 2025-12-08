@@ -86,8 +86,8 @@ const SubscribeToNewsletter = () => {
     }
     
     return (
-        <>
-            <h5 className='text-light opacity-75'>Subscribe to our newsletter</h5>
+        <div className=' w-full'>
+            <h5 className='text-light opacity-75 '>Subscribe to our newsletter</h5>
             <p className='text-light opacity-75'>Monthly digest of what's new and exciting from us.</p>
             <div className="d-flex flex-column w-100 gap-2">
                 <div className="d-flex flex-column flex-sm-row w-100 gap-2">
@@ -125,7 +125,7 @@ const SubscribeToNewsletter = () => {
                     </button>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

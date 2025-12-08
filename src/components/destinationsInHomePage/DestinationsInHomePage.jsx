@@ -43,7 +43,7 @@ const DestinationsInHomePage = () => {
                             slidesPerView: 3,
                             spaceBetween: 20
                         },
-                        1280: {
+                        1400: {
                             slidesPerView: 4,
                             spaceBetween: 20
                         }

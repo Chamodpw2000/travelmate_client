@@ -8,6 +8,13 @@
     color: #333; /* Dark color for better readability */
   }
 
+  /* Center cards in swiper slides */
+  .hotels-section .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .view-btn {
     background: linear-gradient(45deg, #1E5580, #2A93D5);
     color: white;

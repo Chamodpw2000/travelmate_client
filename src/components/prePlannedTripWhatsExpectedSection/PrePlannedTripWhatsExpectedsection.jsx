@@ -3,8 +3,8 @@ import PrePlannedTripWhatsExpectedCard from '../prePlannedTripWhatsExpectedCard/
 
 const PrePlannedTripWhatsExpectedsection = ({whatsExpected, mainActivities, images}) => {
   return (
-    <div className="main-container">
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "50px", width: "100%" }}>
+    <div className="main-container !h-full">
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "50px", width: "100%" }} className="flex flex-col lg:flex-row gap-y-8">
         <div style={{ flex: 1.2, padding: "0 20px" }}>
           <h2>What's Expected</h2>
           {/* Use pre-wrap to preserve whitespace and line breaks */}

@@ -201,7 +201,7 @@ const SigninModal = () => {
               marginLeft: "20px",
               padding: "5px 15px",
               fontWeight: "600",
-              border: "2px solid #3b82f6",
+        
               transition: "background-color 0.3s ease, color 0.3s ease",
             }}
           >

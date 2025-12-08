@@ -8,7 +8,7 @@ const PrePlannedTripCard = ({ id, type, name, price, duration, rating, mainImage
   const defaultImage = "https://picsum.photos/286/180";
   
   return (
-    <Link to={`/pre-planned-trips/${id}`} style={{ textDecoration: "none" }}>
+    <Link to={`/pre-planned-trips/${id}`} style={{ textDecoration: "none" }}  >
       <Card
         style={{
           width: "24rem",

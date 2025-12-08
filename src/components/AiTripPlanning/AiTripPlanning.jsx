@@ -6,9 +6,9 @@ const AiTripPlanning = () => {
   return (
 
 
-    <div className="container">
+    <div className=" w-full bg-red-100">
 
-<div className='tripPlanning container d-flex'>
+<div className='tripPlanning  d-flex'>
       <div className="tripPlanning-left">
         <span className="ai-badge">Powered by AI</span>
         

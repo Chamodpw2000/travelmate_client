@@ -8,6 +8,13 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Center cards in swiper slides */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Feature Icons */
 .feature-icon {
     transition: transform 0.3s ease;

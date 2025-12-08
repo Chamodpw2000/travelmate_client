@@ -49,7 +49,7 @@ const PrePlannedTripsMainSection = ({
         <p className="trip-description">{description}</p>
       </div>
       {/* Details */}
-      <div className="trip-card">
+      <div className="trip-card flex flex-col lg:flex-row !items-center  ">
         {/* Left section: Main Destinations */}
         <div className="trip-destinations">
           {mainDestinations.map((destination, index) => (
@@ -67,19 +67,17 @@ const PrePlannedTripsMainSection = ({
           {/* <p className="trip-available-days">
             <FaCalendarAlt className="icon" /> Available Days: {availableDates}
           </p> */}
-          <p className="no-of-travelers">
+          <div className="flex items-baseline gap-x-3">
             <FaUsers className="icon" /> No of Travelers: {noOfTravelers}
-          </p>
-          <p className="trip-startInfo">
-            <FaClock className="icon" /> Start: {startTime}{" "}
-            <FaMapMarkerAlt className="icon" />
-            {startLocation}
-          </p>
-          <p className="trip-endInfo">
-            <FaClock className="icon" /> End: {endTime}{" "}
-            <FaMapMarkerAlt className="icon" />
-            {endLocation}
-          </p>
+          </div>
+            <div className="flex items-baseline gap-x-3">
+              <FaClock className="icon" /> Start: {startTime}
+              <FaMapMarkerAlt className="icon" /> {startLocation}
+            </div>
+            <div className="flex items-baseline gap-x-3">
+              <FaClock className="icon" /> End: {endTime}
+              <FaMapMarkerAlt className="icon" /> {endLocation}
+            </div>
           <div className="trip-info">
             <span className="trip-duration">Duration: {duration} days</span>
             <span className="trip-price">From: ${price} per adult</span>
