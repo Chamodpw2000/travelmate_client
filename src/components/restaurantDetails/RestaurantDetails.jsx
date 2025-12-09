@@ -57,7 +57,7 @@ const RestaurantDetails = ({ id }) => {
 
   return (
     <> {restaurant ? <>
-      <Container className="my-4">
+      <Container className=" mt-24 !lg:mt-0">
         <Row>
           <Col lg={4} md={12} className="mb-3 d-flex">
             <Card className="w-100 h-100">

@@ -55,7 +55,7 @@ const HotelMainSection = ({ name, description, distance_from_city, id, rating = 
               <Button 
                 variant="warning" 
                 size="lg" 
-                className="book-button"
+                className="book-button my-3"
                 onClick={() => navigate(`/bookHotel/${id}`)}
               >
                 Book Now

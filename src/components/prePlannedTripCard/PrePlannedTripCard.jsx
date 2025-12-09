@@ -8,7 +8,7 @@ const PrePlannedTripCard = ({ id, type, name, price, duration, rating, mainImage
   const defaultImage = "https://picsum.photos/286/180";
   
   return (
-    <Link to={`/pre-planned-trips/${id}`} style={{ textDecoration: "none" }}>
+    <Link to={`/pre-planned-trips/${id}`} style={{ textDecoration: "none" }}  >
       <Card
         style={{
           width: "24rem",
@@ -48,20 +48,7 @@ const PrePlannedTripCard = ({ id, type, name, price, duration, rating, mainImage
         </div>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
-          <div className="d-flex align-items-center mb-2">
-            {/* Generate stars based on rating */}
-            {Array.from({ length: 5 }).map((_, index) => (
-              <FaStar 
-                key={index}
-                style={{ 
-                  color: index < Math.floor(rating) ? "green" : "gray" 
-                }} 
-              />
-            ))}
-            <Badge bg="light" text="dark" className="ms-2">
-              {rating}
-            </Badge>
-          </div>
+          
           <Card.Text>${price} per person</Card.Text>
           {duration && <Card.Text>Duration: {duration} days</Card.Text>}
         </Card.Body>

@@ -132,7 +132,7 @@ const GuidPage = () => {
     };
 
     return (
-        <div className='container py-5'>
+        <div className='container py-5 mt-24'>
             {/* Hero Section */}
             <div className="card border-0 shadow-lg mb-5">
                 <div className="row g-0">

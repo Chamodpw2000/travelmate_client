@@ -68,7 +68,7 @@ function App() {
 
 
 
-        // For real data with ID parameter
+ 
         <Route element={<ClientLayout />}>
           <Route path="/hospital/:id" element={<Hospital />} />
 

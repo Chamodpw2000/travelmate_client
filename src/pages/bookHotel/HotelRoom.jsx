@@ -78,7 +78,7 @@ const HotelRoom = ({ name, type, price, capacity, available, id, fromDate, toDat
                                 </div>
                             )}
 
-                            <div className="d-flex gap-3">
+                            <div className="flex items-center  justify-between gap-1">
                                 <button
                                     className="btn btn-primary px-4 py-2"
                                     onClick={() => handleBook(fromDate, toDate, id, hid)}

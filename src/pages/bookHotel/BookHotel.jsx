@@ -80,11 +80,11 @@ const BookHotel = () => {
 
 
     return (
-        <div className="container-fluid py-5" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
-            <div className="container">
+        <div className="container-fluid py-5 mt-16" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
+            <div>
                 {accommodation && (
                     <div className="card shadow-lg mb-5">
-                        <div className="card-body p-5">
+                        <div className="card-body p-4">
                             <div className="text-center mb-4">
                                 <h1 className="display-4 text-primary fw-bold mb-3">
                                     <i className="fas fa-hotel me-3"></i>
@@ -96,9 +96,9 @@ const BookHotel = () => {
                                 <h4 className="text-muted mt-4">{accommodation.minidescription}</h4>
                             </div>
 
-                            <div className="row mt-5">
+                            <div className="row mt-5 ">
                                 <div className="col-md-8">
-                                    <div className="p-4 bg-white rounded shadow-sm">
+                                    <div className=" bg-white rounded shadow-sm">
                                         <h5 className="text-primary mb-3">
                                             <i className="fas fa-info-circle me-2"></i>
                                             About This Property

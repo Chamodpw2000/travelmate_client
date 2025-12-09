@@ -9,6 +9,13 @@
     text-align: left;
   }
   
+  /* Center cards in swiper slides */
+  .pre-planned-trips-section .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   /* Optional styling for shadow */
 .card-shadow {
   position: absolute;
@@ -22,3 +29,4 @@
   transform: scale(1.1);
   border-radius: 5px;
 }
+

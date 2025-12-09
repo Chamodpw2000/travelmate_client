@@ -11,3 +11,10 @@
 .rounded-4 {
     border-radius: 1rem;
 }
+
+/* Hide border-top on mobile devices */
+@media (max-width: 767px) {
+    .footer-divider {
+        border-top: none !important;
+    }
+}

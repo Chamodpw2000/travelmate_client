@@ -56,10 +56,10 @@ const AllGuides = () => {
     }
 
     return (
-        <div>
+        <div className='mt-16'>
             <div className="container py-5">
                 <div className="card shadow-lg mb-5">
-                    <div className="card-body p-5">
+                    <div className="card-body">
                         <div className="text-center mb-4">
                             <h1 className="display-4 text-primary fw-bold mb-3">
                                 <FaUserTie className="me-3" />

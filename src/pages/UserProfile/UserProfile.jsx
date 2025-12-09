@@ -211,7 +211,7 @@ const UserProfile = () => {
     }
 
     return (
-        <div className="container py-5">
+        <div className="container py-5 mt-24">
             <div className="row">
                 <div className="col-lg-4">
                     <div className="card mb-4 shadow-sm">
@@ -225,9 +225,9 @@ const UserProfile = () => {
                                 />
                                 {editMode && (
                                     <div className="position-absolute bottom-0 end-0">
-                                        <label htmlFor="profilePicInput" className="btn btn-sm btn-primary rounded-circle">
-                                            <FaEdit />
-                                        </label>
+                                        <div htmlFor="profilePicInput" className="bg-black w-8  items-center justify-center flex aspect-square rounded-full">
+                                            <FaEdit className='text-white' />
+                                        </div>
                                         <input 
                                             id="profilePicInput"
                                             type="file" 
@@ -246,13 +246,16 @@ const UserProfile = () => {
                                  user.country ? user.country : 'Location not specified'}
                             </p>
                             
-                            <div className="d-flex justify-content-center mb-2">
+                            <div className="flex justify-content-center mb-2">
                                 {!editMode ? (
                                     <button 
                                         className="btn btn-danger" 
                                         onClick={handleEditToggle}
                                     >
-                                        <FaEdit className="me-2" /> Edit Profile
+                                        <div className='flex gap-x-2'>
+                                               <FaEdit className="me-2" /> Edit Profile
+                                        </div>
+                                     
                                     </button>
                                 ) : (
                                     <>
@@ -267,7 +270,10 @@ const UserProfile = () => {
                                                 </>
                                             ) : (
                                                 <>
-                                                    <FaSave className="me-2" /> Save
+                                                <div className='flex items-center '>
+   <FaSave className="me-2" /> Save
+                                                </div>
+                                                 
                                                 </>
                                             )}
                                         </button>
@@ -276,7 +282,10 @@ const UserProfile = () => {
                                             onClick={handleEditToggle}
                                             disabled={isSaving}
                                         >
-                                            <FaTimes className="me-2" /> Cancel
+                                            <div className='flex items-center'>
+                                                <FaTimes className="me-2" /> Cancel  
+                                            </div>
+                                          
                                         </button>
                                     </>
                                 )}

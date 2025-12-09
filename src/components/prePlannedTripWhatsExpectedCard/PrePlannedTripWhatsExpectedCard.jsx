@@ -29,7 +29,7 @@ const PrePlannedTripWhatsExpectedCard = ({ images, mainActivities }) => {
   }, [images]);
 
   return (
-    <div className="whatsExpected-card-container">
+    <div>
       <div className="whatsExpected-card">
         {/* Background Image */}
         <div
@@ -41,7 +41,7 @@ const PrePlannedTripWhatsExpectedCard = ({ images, mainActivities }) => {
         ></div>
         
         {/* Activities */}
-        <div className="mainActivities">
+        {/* <div className="mainActivities">
           {mainActivities && mainActivities.length > 0 ? (
             mainActivities.map((mainActivity, index) => (
               <div className="mainActivity" key={index}>
@@ -51,7 +51,7 @@ const PrePlannedTripWhatsExpectedCard = ({ images, mainActivities }) => {
           ) : (
             <div className="mainActivity">No activities listed</div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
