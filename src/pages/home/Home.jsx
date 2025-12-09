@@ -15,21 +15,22 @@ import TransportServisersInLandingPage from "../../components/transportServicers
 
 const Home = () => {
   return (
-    <>
+ 
+    <div className="w-full overflow-x-hidden">
       <Hero />
       <RestaurantCategoriesCards />
-      <PrePlannedTripsInLandingPage header="Curated Journeys for You" />
+      <PrePlannedTripsInLandingPage header="Pre Planned Journeys for You" />
       <AiTripPlanning />
       <HotelsInLandingPage />
       <RestaurantsInLandingPage />
-      <PrePlannedTripsInLandingPage header="Explore the World with TravelMate" />
       <TransportServisersInLandingPage />
       <GuideList />
-      <Activities />
+      {/* <Activities /> */}
       <FeedbackSection />
       <FeedbackForm />
       <DestinationsInHomePage/>
-    </>
+      </div>
+  
   );
 };
 

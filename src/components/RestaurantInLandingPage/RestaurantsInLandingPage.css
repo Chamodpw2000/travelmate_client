@@ -7,3 +7,10 @@
     font-weight: bold;
     color: #333; /* Dark color for better readability */
   }
+
+  /* Center cards in swiper slides */
+  .restaurants-section .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -86,7 +86,7 @@ const ConBookHotel = () => {
     };
 
     return (
-        <div className="container-fluid py-5" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
+        <div className="container-fluid py-5 mt-20" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
             <div className="container">
                 <div className="card shadow-lg">
                     <div className="card-body p-0">

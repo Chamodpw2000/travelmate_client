@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./PrePlannedTripBookingForm.css";
-import { Row, Col } from "react-bootstrap";
+// Removed react-bootstrap for Tailwind conversion
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -131,36 +131,35 @@ const PrePlannedTripBookingForm = () => {
   };
 
   return (
-    <div className="booking-container">
-      <div className="form-section">
-        <h1>Book the Trip</h1>
-        <p>
+    <div className="flex flex-col mt-24 lg:flex-row items-center justify-center min-h-screen bg-gray-50 px-4 py-8 gap-8">
+      {/* Form Section */}
+      <div className="w-full max-w-lg bg-white rounded-xl shadow-lg p-6 mb-8 lg:mb-0">
+        <h1 className="text-2xl font-bold mb-2 text-center">Book the Trip</h1>
+        <p className="text-gray-600 text-center mb-6">
           Amazing stuff waiting for you and your friends / family! <br />
           You're just one step away from a new adventure.
         </p>
-        <form className="booking-form" onSubmit={handleSubmit} noValidate>
-          <Row>
-            <Col>
-              <div className="form-group">
-                <label htmlFor="date">Date</label>
-                <input
-                  type="date"
-                  id="date"
-                  name="date"
-                  value={prePlannedTripBookingDetails.date}
-                  onChange={changeHandler}
-                  onBlur={handleBlur}
-                  className={touched.date && errors.date ? 'error-input' : ''}
-                  required
-                />
-                {touched.date && errors.date && 
-                  <span className="error-message">{errors.date}</span>}
-              </div>
-            </Col>
-          </Row>
+        <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+          {/* Date */}
+          <div className="flex flex-col">
+            <label htmlFor="date" className="mb-1 font-medium">Date</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value={prePlannedTripBookingDetails.date}
+              onChange={changeHandler}
+              onBlur={handleBlur}
+              className={`border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.date && errors.date ? 'border-red-500' : 'border-gray-300'}`}
+              required
+            />
+            {touched.date && errors.date && 
+              <span className="text-red-500 text-xs mt-1">{errors.date}</span>}
+          </div>
 
-          <div className="form-group">
-            <label htmlFor="travelerName">Your Name</label>
+          {/* Name */}
+          <div className="flex flex-col">
+            <label htmlFor="travelerName" className="mb-1 font-medium">Your Name</label>
             <input
               type="text"
               id="travelerName"
@@ -169,15 +168,16 @@ const PrePlannedTripBookingForm = () => {
               onChange={changeHandler}
               onBlur={handleBlur}
               placeholder="Enter your full name"
-              className={touched.travelerName && errors.travelerName ? 'error-input' : ''}
+              className={`border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.travelerName && errors.travelerName ? 'border-red-500' : 'border-gray-300'}`}
               required
             />
             {touched.travelerName && errors.travelerName && 
-              <span className="error-message">{errors.travelerName}</span>}
+              <span className="text-red-500 text-xs mt-1">{errors.travelerName}</span>}
           </div>
 
-          <div className="form-group">
-            <label htmlFor="email">E-Mail Address</label>
+          {/* Email */}
+          <div className="flex flex-col">
+            <label htmlFor="email" className="mb-1 font-medium">E-Mail Address</label>
             <input
               type="email"
               id="email"
@@ -186,15 +186,16 @@ const PrePlannedTripBookingForm = () => {
               onChange={changeHandler}
               onBlur={handleBlur}
               placeholder="Enter your e-mail address"
-              className={touched.email && errors.email ? 'error-input' : ''}
+              className={`border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.email && errors.email ? 'border-red-500' : 'border-gray-300'}`}
               required
             />
             {touched.email && errors.email && 
-              <span className="error-message">{errors.email}</span>}
+              <span className="text-red-500 text-xs mt-1">{errors.email}</span>}
           </div>
 
-          <div className="form-group">
-            <label htmlFor="phone">Phone Number</label>
+          {/* Phone */}
+          <div className="flex flex-col">
+            <label htmlFor="phone" className="mb-1 font-medium">Phone Number</label>
             <input
               type="tel"
               id="phone"
@@ -203,59 +204,61 @@ const PrePlannedTripBookingForm = () => {
               onChange={changeHandler}
               onBlur={handleBlur}
               placeholder="Enter your phone number"
-              className={touched.phone && errors.phone ? 'error-input' : ''}
+              className={`border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.phone && errors.phone ? 'border-red-500' : 'border-gray-300'}`}
               required
             />
             {touched.phone && errors.phone && 
-              <span className="error-message">{errors.phone}</span>}
+              <span className="text-red-500 text-xs mt-1">{errors.phone}</span>}
           </div>
 
-          <Row>
-            <Col>
-              <div className="form-group small-inputs">
-                <label htmlFor="adults">Adults</label>
-                <input
-                  type="number"
-                  id="adults"
-                  name="adults"
-                  value={prePlannedTripBookingDetails.adults}
-                  onChange={changeHandler}
-                  onBlur={handleBlur}
-                  min="1"
-                  className={touched.adults && errors.adults ? 'error-input' : ''}
-                  required
-                />
-                {touched.adults && errors.adults && 
-                  <span className="error-message">{errors.adults}</span>}
+          {/* Adults & Kids */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex flex-col">
+              <label htmlFor="adults" className="mb-1 font-medium">Adults</label>
+              <input
+                type="number"
+                id="adults"
+                name="adults"
+                value={prePlannedTripBookingDetails.adults}
+                onChange={changeHandler}
+                onBlur={handleBlur}
+                min="1"
+                className={`border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.adults && errors.adults ? 'border-red-500' : 'border-gray-300'}`}
+                required
+              />
+              {touched.adults && errors.adults && 
+                <span className="text-red-500 text-xs mt-1">{errors.adults}</span>}
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="kids" className="mb-1 font-medium">Kids</label>
+              <input
+                type="number"
+                id="kids"
+                name="kids"
+                value={prePlannedTripBookingDetails.kids}
+                onChange={changeHandler}
+                onBlur={handleBlur}
+                min="0"
+                className={`border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${touched.kids && errors.kids ? 'border-red-500' : 'border-gray-300'}`}
+              />
+              {touched.kids && errors.kids && 
+                <span className="text-red-500 text-xs mt-1">{errors.kids}</span>}
+            </div>
+          </div>
 
-                <label htmlFor="kids">Kids</label>
-                <input
-                  type="number"
-                  id="kids"
-                  name="kids"
-                  value={prePlannedTripBookingDetails.kids}
-                  onChange={changeHandler}
-                  onBlur={handleBlur}
-                  min="0"
-                  className={touched.kids && errors.kids ? 'error-input' : ''}
-                />
-                {touched.kids && errors.kids && 
-                  <span className="error-message">{errors.kids}</span>}
-              </div>
-            </Col>
-          </Row>
-
+          {/* Submit Button */}
           <button
             type="submit"
-            className="submit-btn"
+            className="w-full py-3 bg-blue-400 text-white font-semibold rounded-md shadow hover:bg-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Processing...' : 'Complete your booking'}
           </button>
         </form>
       </div>
-      <div className="image-section">
-        <img src="https://picsum.photos/500/700" alt="Travel Background" />
+      {/* Image Section */}
+      <div className="w-full max-w-md flex justify-center">
+        <img src="https://picsum.photos/500/700" alt="Travel Background" className="rounded-xl shadow-lg w-full h-auto object-cover" />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const VehicleBookings = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="container-fluid py-5" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
+        <div className="container-fluid py-5 mt-20" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
             <div className="container">
                 {/* Welcome Header */}
                 <div className="text-center mb-5">

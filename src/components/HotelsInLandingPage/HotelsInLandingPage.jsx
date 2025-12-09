@@ -28,11 +28,39 @@ const HotelsInLandingPage = () => {
 
       <Swiper
         spaceBetween={30} 
-        slidesPerView={3}
+        slidesPerView={1}
         modules={[Autoplay, Pagination]}
         loop={true}
         autoplay={{ delay: 3000 }}
+
         // pagination={{ clickable: true }}
+        breakpoints={{
+          // when window width is >= 480px (mobile)
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          // when window width is >= 640px (small tablets)
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 25
+          },
+          // when window width is >= 768px (tablets)
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 25
+          },
+          // when window width is >= 1024px (small desktop)
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          // when window width is >= 1280px (large desktop)
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 30
+          }
+        }}
         style={{ paddingBottom: '2rem' }} 
       >
         {allAccommodations.map((accommodation) => (

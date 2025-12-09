@@ -139,202 +139,270 @@ const navigater = useNavigate();
     };
 
     return (
-        <>
+        <div className="mt-32 px-4 sm:px-6 lg:px-8">
             <Modal
                 show={modalData.show}
                 onHide={() => setModalData({ show: false, title: '', message: '' })}
                 centered
             >
-                <Modal.Body style={{ textAlign: 'center', padding: '5px' }}>
-                    <p style={{ fontSize: '18px', color: '#333' }} className="pt-5">{modalData.message}</p>
+                <Modal.Body className="text-center p-5">
+                    <p className="text-lg text-gray-800 pt-5">{modalData.message}</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button
                         style={{
                             backgroundColor: '#00A1FF',
                             borderColor: '#00A1FF',
-                            fontSize: '16px',
-                            borderRadius: '8px',
                         }}
                         onClick={() => setModalData({ show: false, title: '', message: '' })}
-                        className="py-2 px-4"
+                        className="py-2 px-4 text-base rounded-lg"
                     >
                         Ok
                     </Button>
                 </Modal.Footer>
             </Modal>
-            {restaurant ? <>
-                <Container className="my-4">
-                    <h1 className="text-center fw-bold mb-5 mt-4">
+            {restaurant ? 
+                <div className="max-w-7xl mx-auto my-4 sm:my-6 lg:my-8">
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl text-center font-bold mb-6 sm:mb-8 lg:mb-10 mt-4">
                         Tell us your experience at {restaurant.restaurantName}
                     </h1>
-                    <Row>
-                        <Col md={4} className="px-4">
-                            <Card className="border border-0">
-                                <Card.Img className='pt-4 px-4' variant="top" src={restaurant.images[0]} alt="Cafe Chill" />
-                                <Card.Body>
-                                    <Card.Title className='px-2 fw-bold'>{restaurant.restaurantName}</Card.Title>
-                                    <Card.Text className='px-2'>{restaurant.address}</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
+                    <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                        {/* Restaurant Card */}
+                        <div className="w-full lg:w-1/3">
+                            <div className="border-0">
+                                <img 
+                                    className="pt-4 px-4 w-full h-auto rounded-lg object-cover" 
+                                    src={restaurant.images[0]} 
+                                    alt="Cafe Chill" 
+                                />
+                                <div className="p-4">
+                                    <h5 className="px-2 font-bold text-lg sm:text-xl">{restaurant.restaurantName}</h5>
+                                    <p className="px-2 text-gray-600 text-sm sm:text-base">{restaurant.address}</p>
+                                </div>
+                            </div>
+                        </div>
 
-                        <Col md={8}>
-                            <Form onSubmit={handleSubmit}>
-                                {/* New Name Field */}
-                                <Col md={6}>
-                                    <Form.Group className="mb-4">
-                                        <Form.Label>Your Name
-                                        </Form.Label>
-                                        <Form.Control
+                        {/* Form Section */}
+                        <div className="w-full lg:w-2/3">
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                {/* Name Field */}
+                                <div className="w-full sm:w-2/3 lg:w-1/2">
+                                    <div className="mb-4">
+                                        <label className="block mb-2 text-sm font-medium">Your Name</label>
+                                        <input
                                             type="text"
                                             placeholder="Enter your name"
-                           
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             value={userName}
                                             onChange={(e) => setUserName(e.target.value)}
                                             required
                                         />
-                                    </Form.Group>
-                                </Col>
-                                {/* Rest of the form groups remain the same */}
-                                <Form.Group>
-                                    <Form.Label>Rate your <span className="fw-bold">Overall</span> experience</Form.Label>
-                                    <div className="d-flex gap-1">
+                                    </div>
+                                </div>
+
+                                {/* Overall Rating */}
+                                <div>
+                                    <label className="block mb-2 text-sm font-medium">
+                                        Rate your <span className="font-bold">Overall</span> experience
+                                    </label>
+                                    <div className="flex gap-1 sm:gap-2">
                                         {[...Array(5)].map((_, index) => (
-                                            <span key={index} className="rating-circle" style={{ width: "25px", height: "25px", borderRadius: "50%", backgroundColor: (hoverOverallRating || overallRating) > index ? "#00A1FF" : "transparent", border: "2px solid #00A1FF", cursor: "pointer", }} onMouseEnter={() => handleMouseEnter(index + 1, "overall")} onMouseLeave={() => handleMouseLeave("overall")} onClick={() => handleRatingClick(index + 1, "overall")} />
+                                            <span 
+                                                key={index} 
+                                                className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-[#00A1FF] cursor-pointer transition-colors" 
+                                                style={{ 
+                                                    backgroundColor: (hoverOverallRating || overallRating) > index ? "#00A1FF" : "transparent"
+                                                }} 
+                                                onMouseEnter={() => handleMouseEnter(index + 1, "overall")} 
+                                                onMouseLeave={() => handleMouseLeave("overall")} 
+                                                onClick={() => handleRatingClick(index + 1, "overall")} 
+                                            />
                                         ))}
                                     </div>
-                                </Form.Group>
+                                </div>
 
-                                {/* Food Rating Section */}
-                                <Form.Group>
-                                    <Form.Label className="fw-bold mt-2">Food</Form.Label>
-                                    <div className="d-flex gap-1">
+                                {/* Food Rating */}
+                                <div>
+                                    <label className="block mb-2 text-sm font-bold mt-2">Food</label>
+                                    <div className="flex gap-1 sm:gap-2">
                                         {[...Array(5)].map((_, index) => (
-                                            <span key={index} className="rating-circle" style={{ width: "25px", height: "25px", borderRadius: "50%", backgroundColor: (hoverFoodRating || foodRating) > index ? "#00A1FF" : "transparent", border: "2px solid #00A1FF", cursor: "pointer", }} onMouseEnter={() => handleMouseEnter(index + 1, "food")} onMouseLeave={() => handleMouseLeave("food")} onClick={() => handleRatingClick(index + 1, "food")} />
+                                            <span 
+                                                key={index} 
+                                                className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-[#00A1FF] cursor-pointer transition-colors" 
+                                                style={{ 
+                                                    backgroundColor: (hoverFoodRating || foodRating) > index ? "#00A1FF" : "transparent"
+                                                }} 
+                                                onMouseEnter={() => handleMouseEnter(index + 1, "food")} 
+                                                onMouseLeave={() => handleMouseLeave("food")} 
+                                                onClick={() => handleRatingClick(index + 1, "food")} 
+                                            />
                                         ))}
                                     </div>
-                                </Form.Group>
+                                </div>
 
-                                {/* Service Rating Section */}
-                                <Form.Group>
-                                    <Form.Label className="fw-bold mt-2">Service</Form.Label>
-                                    <div className="d-flex gap-1">
+                                {/* Service Rating */}
+                                <div>
+                                    <label className="block mb-2 text-sm font-bold mt-2">Service</label>
+                                    <div className="flex gap-1 sm:gap-2">
                                         {[...Array(5)].map((_, index) => (
-                                            <span key={index} className="rating-circle" style={{ width: "25px", height: "25px", borderRadius: "50%", backgroundColor: (hoverServiceRating || serviceRating) > index ? "#00A1FF" : "transparent", border: "2px solid #00A1FF", cursor: "pointer", }} onMouseEnter={() => handleMouseEnter(index + 1, "service")} onMouseLeave={() => handleMouseLeave("service")} onClick={() => handleRatingClick(index + 1, "service")} />
+                                            <span 
+                                                key={index} 
+                                                className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-[#00A1FF] cursor-pointer transition-colors" 
+                                                style={{ 
+                                                    backgroundColor: (hoverServiceRating || serviceRating) > index ? "#00A1FF" : "transparent"
+                                                }} 
+                                                onMouseEnter={() => handleMouseEnter(index + 1, "service")} 
+                                                onMouseLeave={() => handleMouseLeave("service")} 
+                                                onClick={() => handleRatingClick(index + 1, "service")} 
+                                            />
                                         ))}
                                     </div>
-                                </Form.Group>
+                                </div>
 
-                                {/* Value Rating Section */}
-                                <Form.Group>
-                                    <Form.Label className="fw-bold mt-2">Value</Form.Label>
-                                    <div className="d-flex gap-1">
+                                {/* Value Rating */}
+                                <div>
+                                    <label className="block mb-2 text-sm font-bold mt-2">Value</label>
+                                    <div className="flex gap-1 sm:gap-2">
                                         {[...Array(5)].map((_, index) => (
-                                            <span key={index} className="rating-circle" style={{ width: "25px", height: "25px", borderRadius: "50%", backgroundColor: (hoverValueRating || valueRating) > index ? "#00A1FF" : "transparent", border: "2px solid #00A1FF", cursor: "pointer", }} onMouseEnter={() => handleMouseEnter(index + 1, "value")} onMouseLeave={() => handleMouseLeave("value")} onClick={() => handleRatingClick(index + 1, "value")} />
+                                            <span 
+                                                key={index} 
+                                                className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-[#00A1FF] cursor-pointer transition-colors" 
+                                                style={{ 
+                                                    backgroundColor: (hoverValueRating || valueRating) > index ? "#00A1FF" : "transparent"
+                                                }} 
+                                                onMouseEnter={() => handleMouseEnter(index + 1, "value")} 
+                                                onMouseLeave={() => handleMouseLeave("value")} 
+                                                onClick={() => handleRatingClick(index + 1, "value")} 
+                                            />
                                         ))}
                                     </div>
-                                </Form.Group>
+                                </div>
 
-                                {/* Atmosphere Rating Section */}
-                                <Form.Group>
-                                    <Form.Label className="fw-bold mt-2">Atmosphere</Form.Label>
-                                    <div className="d-flex gap-1">
+                                {/* Atmosphere Rating */}
+                                <div>
+                                    <label className="block mb-2 text-sm font-bold mt-2">Atmosphere</label>
+                                    <div className="flex gap-1 sm:gap-2">
                                         {[...Array(5)].map((_, index) => (
-                                            <span key={index} className="rating-circle" style={{ width: "25px", height: "25px", borderRadius: "50%", backgroundColor: (hoverAtmosphereRating || atmosphereRating) > index ? "#00A1FF" : "transparent", border: "2px solid #00A1FF", cursor: "pointer", }} onMouseEnter={() => handleMouseEnter(index + 1, "atmosphere")} onMouseLeave={() => handleMouseLeave("atmosphere")} onClick={() => handleRatingClick(index + 1, "atmosphere")} />
+                                            <span 
+                                                key={index} 
+                                                className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-[#00A1FF] cursor-pointer transition-colors" 
+                                                style={{ 
+                                                    backgroundColor: (hoverAtmosphereRating || atmosphereRating) > index ? "#00A1FF" : "transparent"
+                                                }} 
+                                                onMouseEnter={() => handleMouseEnter(index + 1, "atmosphere")} 
+                                                onMouseLeave={() => handleMouseLeave("atmosphere")} 
+                                                onClick={() => handleRatingClick(index + 1, "atmosphere")} 
+                                            />
                                         ))}
                                     </div>
-                                </Form.Group>
+                                </div>
 
-                                {/* Dropdowns for Visit Date and Family Type */}
-                                <Row className="mt-3">
-                                    <Col md={6}>
-                                        <Form.Group>
-                                            <Form.Label>When did you go?</Form.Label>
-                                            <Form.Select value={selectedVisitDate} onChange={(e) => setSelectedVisitDate(e.target.value)}>
-                                                <option>January 2024</option>
-                                                <option>February 2024</option>
-                                                <option>March 2024</option>
-                                                <option>April 2024</option>
-                                                <option>May 2024</option>
-                                                <option>June 2024</option>
-                                                <option>July 2024</option>
-                                                <option>Auguest 2024</option>
-                                                <option>September 2024</option>
-                                                <option>October 2024</option>
-                                                <option>November 2024</option>
-                                                <option>December 2024</option>
-                                            </Form.Select>
-                                        </Form.Group>
-                                    </Col>
+                                {/* Visit Date and Companion Type */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                    <div>
+                                        <label className="block mb-2 text-sm font-medium">When did you go?</label>
+                                        <select 
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            value={selectedVisitDate} 
+                                            onChange={(e) => setSelectedVisitDate(e.target.value)}
+                                        >
+                                            <option>January 2024</option>
+                                            <option>February 2024</option>
+                                            <option>March 2024</option>
+                                            <option>April 2024</option>
+                                            <option>May 2024</option>
+                                            <option>June 2024</option>
+                                            <option>July 2024</option>
+                                            <option>Auguest 2024</option>
+                                            <option>September 2024</option>
+                                            <option>October 2024</option>
+                                            <option>November 2024</option>
+                                            <option>December 2024</option>
+                                        </select>
+                                    </div>
 
-                                    <Col md={6}>
-                                        <Form.Group>
-                                            <Form.Label>Who did you go with?</Form.Label>
-                                            <div className="d-flex gap-2">
-                                                {["Solo", "Family", "Friends", "Couple", "Business"].map((option) => (
-                                                    <Button
-                                                        key={option}
-                                                        onClick={() => handleFamilyTypeOptionClick(option)}
-                                                        style={{
-                                                            backgroundColor: selectedFamilyTypeOption === option ? '#00A1FF' : 'transparent',
-                                                            color: selectedFamilyTypeOption === option ? 'white' : '#00A1FF',
-                                                            border: '1px solid #00A1FF'
-                                                        }}
-                                                    >
-                                                        {option}
-                                                    </Button>
-                                                ))}
-                                            </div>
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
+                                    <div>
+                                        <label className="block mb-2 text-sm font-medium">Who did you go with?</label>
+                                        <div className="flex flex-wrap gap-2">
+                                            {["Solo", "Family", "Friends", "Couple", "Business"].map((option) => (
+                                                <button
+                                                    type="button"
+                                                    key={option}
+                                                    onClick={() => handleFamilyTypeOptionClick(option)}
+                                                    className="px-3 py-1.5 text-sm sm:text-base border border-[#00A1FF] rounded transition-colors"
+                                                    style={{
+                                                        backgroundColor: selectedFamilyTypeOption === option ? '#00A1FF' : 'transparent',
+                                                        color: selectedFamilyTypeOption === option ? 'white' : '#00A1FF',
+                                                    }}
+                                                >
+                                                    {option}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
 
                                 {/* Purpose of Visit */}
-                                <Form.Group className="mt-3">
-                                    <Form.Label>What were you here for?</Form.Label>
-                                    <Form.Select value={selectedPurpose} onChange={(e) => setSelectedPurpose(e.target.value)}>
+                                <div className="mt-4">
+                                    <label className="block mb-2 text-sm font-medium">What were you here for?</label>
+                                    <select 
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        value={selectedPurpose} 
+                                        onChange={(e) => setSelectedPurpose(e.target.value)}
+                                    >
                                         <option>Select one</option>
                                         <option>Lunch</option>
                                         <option>Dinner</option>
                                         <option>Casual Outing</option>
-                                    </Form.Select>
-                                </Form.Group>
+                                    </select>
+                                </div>
 
                                 {/* Review Title */}
-                                <Form.Group className="mt-3">
-                                    <Form.Label> Title your review{" "}
-                                        <span className="text-muted"> ({reviewTitle.length}/{maxTitleLength}) </span></Form.Label>
-                                    <Form.Control type="text" placeholder="Add a title to your review..." maxLength={maxTitleLength} value={reviewTitle} onChange={(e) => setReviewTitle(e.target.value)} />
-                                </Form.Group>
+                                <div className="mt-4">
+                                    <label className="block mb-2 text-sm font-medium">
+                                        Title your review{" "}
+                                        <span className="text-gray-500">({reviewTitle.length}/{maxTitleLength})</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Add a title to your review..." 
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        maxLength={maxTitleLength} 
+                                        value={reviewTitle} 
+                                        onChange={(e) => setReviewTitle(e.target.value)} 
+                                    />
+                                </div>
 
-                                {/* Review Text Block */}
-                                <Form.Group className="mt-3">
-                                    <Form.Label> Write your review{" "}
-                                        <span className="text-muted"> ({reviewBody.length}/{maxBodyLength}) </span></Form.Label>
-                                    <Form.Control as="textarea" rows={4} placeholder="Add your review..." maxLength={maxBodyLength} value={reviewBody} onChange={(e) => setReviewBody(e.target.value)} />
-                                </Form.Group>
+                                {/* Review Text */}
+                                <div className="mt-4">
+                                    <label className="block mb-2 text-sm font-medium">
+                                        Write your review{" "}
+                                        <span className="text-gray-500">({reviewBody.length}/{maxBodyLength})</span>
+                                    </label>
+                                    <textarea 
+                                        rows={4} 
+                                        placeholder="Add your review..." 
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        maxLength={maxBodyLength} 
+                                        value={reviewBody} 
+                                        onChange={(e) => setReviewBody(e.target.value)} 
+                                    />
+                                </div>
 
                                 {/* Submit Button */}
-                                <Button
-                                    variant="primary"
+                                <button
                                     type="submit"
                                     disabled={!isFormValid()}
-                                    className="mt-4"
-                                    style={{
-                                        backgroundColor: '#C1EAF8',
-                                        border: 'none',
-                                        color: '#000000'
-                                    }}
+                                    className="mt-4 w-full sm:w-auto px-6 py-3 bg-[#C1EAF8] text-black rounded-md font-medium hover:bg-[#A0D9E8] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                                 >
                                     Submit Review
-                                </Button>
-                            </Form>
-                        </Col>
-                    </Row>
-                </Container>
-            </> : <></>}
-        </>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+         : <></>}
+        </div>
     );
 };
 

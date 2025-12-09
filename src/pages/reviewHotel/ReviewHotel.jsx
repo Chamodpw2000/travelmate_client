@@ -153,7 +153,7 @@ const ReviewHotel = () => {
     );
   };
   return (
-    <>
+    <div className="mt-24">
       <Modal
         show={modalData.show}
         onHide={() => setModalData({ show: false, title: "", message: "" })}
@@ -182,7 +182,7 @@ const ReviewHotel = () => {
         </Modal.Footer>
       </Modal>
       {hotel ? (
-        <>
+    
           <Container className="my-4">
             <h1 className="text-center fw-bold mb-5 mt-4">
               Tell us your experience at {hotel.name}
@@ -205,7 +205,7 @@ const ReviewHotel = () => {
                 </Card>
               </Col>
 
-              <Col md={8}>
+              <Col md={8} className="my-4">
                 <Form onSubmit={handleSubmit}>
                   {/* New Name Field */}
                   <Col md={6}>
@@ -379,7 +379,7 @@ const ReviewHotel = () => {
                   </Form.Group>
 
                   {/* Dropdowns for Visit Date and Family Type */}
-                  <Row className="mt-3">
+                  <div className="mt-3">
                     <Col md={6}>
                       <Form.Group>
                         <Form.Label>When did you go?</Form.Label>
@@ -403,10 +403,10 @@ const ReviewHotel = () => {
                       </Form.Group>
                     </Col>
 
-                    <Col md={6}>
+                    <Col md={6} className="mt-4">
                       <Form.Group>
                         <Form.Label>Who did you go with?</Form.Label>
-                        <div className="d-flex gap-2">
+                        <div className="grid grid-cols-3 lg:grid-cols-5 gap-2">
                           {[
                             "Solo",
                             "Family",
@@ -437,7 +437,7 @@ const ReviewHotel = () => {
                         </div>
                       </Form.Group>
                     </Col>
-                  </Row>
+                  </div>
 
                   {/* Stay Duration */}
                   <Form.Group className="mt-3">
@@ -510,11 +510,11 @@ const ReviewHotel = () => {
               </Col>
             </Row>
           </Container>
-        </>
+   
       ) : (
         <></>
       )}
-    </>
+    </div>
   );
 };
 

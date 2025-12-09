@@ -13,7 +13,7 @@ const Hero = () => {
                         Let's Explore Sri Lanka <br /> with
                     </p>
                     <h1 className="hero-title">TRAVEL MATE</h1>
-                    <div className="search-container">
+                    <div className="">
                         <SearchBar />
                     </div>
                 </div>
