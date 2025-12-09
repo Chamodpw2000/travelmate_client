@@ -19,7 +19,12 @@ const HospitalDetails = (props) => {
   console.log('Rendering HospitalDetails with props:', props);
 
   return (
-    <div className="hospital-main-section">
+    <div className="hospital-main-sectio" 
+    
+   
+   
+   >
+    
       {/* Hero Section with Hospital Name and Category */}
       <div className="hospital-hero py-4" style={{ backgroundColor: '#f8f9fa', borderBottom: '1px solid #e9ecef' }}>
         <div className="container">
