@@ -48,7 +48,7 @@ const DestinationsInHomePage = () => {
                             spaceBetween: 20
                         }
                     }}>
-
+                        
                     {allDestinations.map((destinaion) => (
                         <SwiperSlide key={destinaion.id}>
                             <DestinationCardComponent

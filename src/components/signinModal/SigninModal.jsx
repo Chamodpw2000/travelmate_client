@@ -77,11 +77,11 @@ const SigninModal = () => {
             // Navigate to details page if user is not registered
             navigate(`/details/${backendResponse.data.id}`);
             localStorage.setItem('doc_id', backendResponse.data.id);
-            alert(backendResponse.data.id)
+     
 
           } else {
             // Save the token and user details to localStorage
-            alert(backendResponse.data.id)
+
             localStorage.setItem("auth-token", backendResponse.data.token);
             localStorage.setItem('doc_id', backendResponse.data.id);
             localStorage.setItem("user", JSON.stringify(userDetails)); // Save user details

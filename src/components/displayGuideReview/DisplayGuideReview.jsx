@@ -92,7 +92,7 @@ const user = JSON.parse(localStorage.getItem("user"));
   const user = JSON.parse(localStorage.getItem("user"));
 
   return (
-    <>
+  
       <Container>
         <div
           style={{
@@ -100,10 +100,10 @@ const user = JSON.parse(localStorage.getItem("user"));
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
             borderRadius: "8px",
           }}
-          className="p-4"
+          className=""
         >
-          <div className="d-flex justify-content-between align-items-center p-4">
-            <div className="d-flex align-items-center">
+          <div className="flex  flex-col p-4 gap-y-5">
+            <div className="flex items-center justify-between">
               <h5 className="mb-0 me-4 fw-bold">Reviews</h5>
               <div className="d-flex align-items-center">
                 <h4 className="mb-0 me-2 text-warning fw-bold">
@@ -146,7 +146,7 @@ const user = JSON.parse(localStorage.getItem("user"));
           })}
         </div>
       </Container>
-    </>
+
   );
 };
 

@@ -209,7 +209,7 @@ const TransportPage = () => {
     }
 
     return (
-        <div className="container py-5">
+        <div className="container py-5 mt-24">
             {/* Service Header with Availability Check */}
             <div className="card mb-4 border-0 shadow-sm">
                 <div className="card-body">
@@ -284,15 +284,13 @@ const TransportPage = () => {
                                 )}
                             </div>
 
-                            <div className="col-md-1 d-none d-md-block">
+                            <div className="flex w-full">
 
 
                                 <img
-                                    src={transportationService.cardImage
-                                    }
+                                    src={transportationService.cardImage}
                                     alt="Transportation Service"
-                                    className='rounded shadow-sm mt-3 mb-3 mx-4 '
-                                    style={{ height: "200px", objectFit: "cover", borderRadius: "40px" }}
+                                    className="rounded-2xl shadow-sm mt-3 mb-3 mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md h-40 sm:h-56 md:h-64 object-cover"
                                 />
 
                             </div>

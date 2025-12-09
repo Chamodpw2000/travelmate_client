@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Button, Card, Container } from 'react-bootstrap'
+// Removed react-bootstrap for Tailwind conversion
 import { Link } from 'react-router-dom'
 import { ClientContext } from '../../context/ClientContext';
 import './DisplayHotelReviews.css'
@@ -7,31 +7,22 @@ import './DisplayHotelReviews.css'
 
 const ReviewCard = ({ userName, title, body, travelType, visitDate }) => {
   return (
-    <Card className="mb-4 shadow-sm">
-      <Card.Body>
-        <div className="d-flex align-items-center mb-3">
-
-          <div>
-            <h6 className="mb-0">{userName}</h6>
-            <small className="text-muted">from Australia</small>
-          </div>
+    <div className="mb-4 bg-white rounded-lg shadow-sm p-4">
+      <div className="flex items-center mb-3">
+        <div>
+          <h6 className="mb-0 font-semibold text-base">{userName}</h6>
+          <small className="text-gray-500">from Australia</small>
         </div>
-        <div className="d-flex align-items-center mb-3">
-
-        </div>
-        <h5>{title}</h5>
-        <small className="text-muted">{visitDate} • {travelType}</small>
-        <p className="mt-3">
-          {body}
-        </p>
-        {/* <small className="text-muted d-block mt-3">
-            Written December 28, 2024
-          </small> */}
-        <small className="text-muted">
-          This review is the subjective opinion of a TravelMate member and not of TravelMate LLC.
-        </small>
-      </Card.Body>
-    </Card>
+      </div>
+      <h5 className="text-lg font-bold mb-1">{title}</h5>
+      <small className="text-gray-500">{visitDate} • {travelType}</small>
+      <p className="mt-3 text-gray-700">
+        {body}
+      </p>
+      <small className="text-gray-400 block mt-3">
+        This review is the subjective opinion of a TravelMate member and not of TravelMate LLC.
+      </small>
+    </div>
   );
 };
 
@@ -85,56 +76,45 @@ const DisplayHotelReviews = ({ id }) => {
   };
   const user = JSON.parse(localStorage.getItem("user"));
   return (
-    <>
-      <Container>
-        <div style={{
-          backgroundColor: '#f8f9fa',
-          boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-          borderRadius: '8px',
-        }}
-          className='p-4'
-        >
-          <div
-            className="d-flex justify-content-between align-items-center p-4"
-          >
-            <div className="d-flex align-items-center">
-              <h5 className="mb-0 me-4 fw-bold">Reviews</h5>
-              <div className="d-flex align-items-center">
-                <h4 className="mb-0 me-2 text-warning fw-bold">{averageOverllRating}</h4>
-                <div className="d-flex">
-                  {renderRatingDots(averageOverllRating)}
-                </div>
 
+      <div className="w-full max-w-6xl mb-4 mx-auto bg-gray-50 rounded-xl shadow-lg p-4 sm:p-6 mt-4">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 p-2 sm:p-4">
+          <div className="flex  justify-between sm:flex-row sm:items-center gap-2">
+            <h5 className="mb-0 font-bold text-lg sm:mr-6">Reviews</h5>
+            <div className="flex items-center gap-2">
+              <span className="text-yellow-500 font-bold text-xl">{averageOverllRating}</span>
+              <div className="flex items-center">
+                {renderRatingDots(averageOverllRating)}
               </div>
             </div>
-            <div className="d-flex">
-              {user && <Link to={`/review/hotels/${id}`} style={{ textDecoration: 'none' }}>
-                <Button
-                  variant="dark"
-                  className="me-2 rounded-pill px-4 py-2 fw-bold"
-                  style={{ fontSize: '0.9rem' }}
-                >
-                  Write a Review
-                </Button></Link>}
-            </div>
           </div>
-
-          {hotelReviews.map((review, id) => {
-            return (
-              <ReviewCard
-                key={id}
-                userName={review.userName}
-                title={review.reviewTitle}
-                body={review.reviewBody}
-                travelType={review.travelType}
-                visitDate={review.visitDate}
-              />
-            )
-          })}
+          <div className="flex">
+            {user && <Link to={`/review/hotels/${id}`} className="no-underline">
+              <button
+                className="!rounded-full  px-4 py-2 font-bold bg-gray-800 text-white text-sm hover:bg-gray-900 transition-colors"
+                style={{ fontSize: '0.9rem' }}
+              >
+                Write a Review
+              </button>
+            </Link>}
+          </div>
         </div>
-      </Container>
 
-    </>
+        <div className="mt-2">
+          {hotelReviews.map((review, idx) => (
+            <ReviewCard
+              key={idx}
+              userName={review.userName}
+              title={review.reviewTitle}
+              body={review.reviewBody}
+              travelType={review.travelType}
+              visitDate={review.visitDate}
+            />
+          ))}
+        </div>
+      </div>
+
+ 
   )
 }
 

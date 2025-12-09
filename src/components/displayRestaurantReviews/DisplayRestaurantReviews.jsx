@@ -43,7 +43,7 @@ const DisplayRestaurantReviews = ({ id }) => {
 
   const { allRestaurantReviews } = useContext(ClientContext);
   const restaurantReviews = allRestaurantReviews.filter((review) => review.restaurantId === parseInt(id));
-   
+
   const calculateAverageRating = (reviews) => {
     if (reviews.length === 0) return 0; // Avoid division by zero
     const totalOverallRating = reviews.reduce((sum, review) => sum + review.overallRating, 0);
@@ -55,9 +55,9 @@ const DisplayRestaurantReviews = ({ id }) => {
     const averageOverllRating = parseFloat((totalOverallRating / reviews.length).toFixed(2));
     return averageOverllRating;
   };
-  
+
   const averageOverllRating = calculateAverageRating(restaurantReviews);
-  
+
   const renderRatingDots = (rating) => {
     const maxDots = 5; // Maximum number of dots
 
@@ -86,60 +86,61 @@ const DisplayRestaurantReviews = ({ id }) => {
       </div>
     );
   };
-const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
-    <>
-      <Container>
-        <div style={{
-          backgroundColor: '#f8f9fa',
-          boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-          borderRadius: '8px',
-        }}
-          className='p-4'
+
+    <Container>
+      <div style={{
+        backgroundColor: '#f8f9fa',
+        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+        borderRadius: '8px',
+      }}
+        className='p-4'
+      >
+        <div
+          className=" flex flex-col lg:flex-row lg:gap-x-5 py-4  gap-y-5 lg:items-center lg:justify-between"
         >
-          <div
-            className="d-flex justify-content-between align-items-center p-4"
-          >
+          <div className="flex items-center justify-between">
+            <h5 className="mb-0 me-4 fw-bold">Reviews</h5>
             <div className="d-flex align-items-center">
-              <h5 className="mb-0 me-4 fw-bold">Reviews</h5>
-              <div className="d-flex align-items-center">
-                <h4 className="mb-0 me-2 text-warning fw-bold">{averageOverllRating}</h4>
-                <div className="d-flex">
-                  {renderRatingDots(averageOverllRating)}
-                </div>
-                <span className="ms-3 text-muted fw-medium" style={{ fontSize: '1rem' }}>
-                 {restaurantReviews.length} reviews
-                </span>
+              <h4 className="mb-0 me-2 text-warning fw-bold">{averageOverllRating}</h4>
+              <div className="d-flex">
+                {renderRatingDots(averageOverllRating)}
               </div>
-            </div>
-            <div className="d-flex">
-             {user && <Link to={`/review/restaurants/${id}`} style={{ textDecoration: 'none' }}>
-                <Button
-                  variant="dark"
-                  className="me-2 rounded-pill px-4 py-2 fw-bold"
-                  style={{ fontSize: '0.9rem' }}
-                >
-                  Write a Review
-                </Button></Link>}
+
             </div>
           </div>
-
-          {restaurantReviews.map((review, id) => {
-            return (
-              <ReviewCard
-                key={id}
-                userName={review.userName}
-                title={review.reviewTitle}
-                body={review.reviewBody}
-                familyType={review.familyType}
-                visitDate={review.visitDate}
-              />
-            )
-          })}
+          <div className='flex items-center justify-between lg:gap-x-5'>
+            <span className="" style={{ fontSize: '1rem' }}>
+              {restaurantReviews.length} reviews
+            </span>
+            {user && <Link to={`/review/restaurants/${id}`} style={{ textDecoration: 'none' }}>
+              <Button
+                variant="dark"
+                className="me-2 rounded-pill px-4 py-2 fw-bold"
+                style={{ fontSize: '0.9rem' }}
+              >
+                Write a Review
+              </Button></Link>}
+          </div>
         </div>
-      </Container>
 
-    </>
+        {restaurantReviews.map((review, id) => {
+          return (
+            <ReviewCard
+              key={id}
+              userName={review.userName}
+              title={review.reviewTitle}
+              body={review.reviewBody}
+              familyType={review.familyType}
+              visitDate={review.visitDate}
+            />
+          )
+        })}
+      </div>
+    </Container>
+
+
   )
 }
 

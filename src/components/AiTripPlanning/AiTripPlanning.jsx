@@ -13,8 +13,8 @@ const AiTripPlanning = () => {
         <span className="ai-badge">Powered by AI</span>
         
         <h1 className="main-title">
-          Plan Your Perfect<br />
-          Trip with AI
+          Explore TravelMate<br />
+        with AI
         </h1>
         
         <div className="subtitle">

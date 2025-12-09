@@ -131,7 +131,7 @@ const ReviewGuide = () => {
     );
   };
   return (
-    <>
+    <div className="mt-24">
       <Modal
         show={modalData.show}
         onHide={() => setModalData({ show: false, title: "", message: "" })}
@@ -183,7 +183,7 @@ const ReviewGuide = () => {
                 </Card>
               </Col>
 
-              <Col md={8}>
+              <Col md={8} className="mt-3">
                 <Form onSubmit={handleSubmit}>
                   {/* New Name Field */}
                   <Col md={6}>
@@ -378,7 +378,7 @@ const ReviewGuide = () => {
       ) : (
         <></>
       )}
-    </>)
+    </div>)
 }
 
 export default ReviewGuide

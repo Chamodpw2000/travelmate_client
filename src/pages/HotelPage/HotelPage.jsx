@@ -10,7 +10,7 @@ const HotelPage = () => {
     const { accommodationID } = useParams();
     const accommodation = allAccommodations.find((e) => e.id === parseInt(accommodationID));
     return (
-        <div className='mt-15'>
+        <div className='mt-16'>
             {accommodation ? <>
             <HotelMainSection
             

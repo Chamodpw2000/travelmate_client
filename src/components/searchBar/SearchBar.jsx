@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import React, { useContext, useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import './SearchBar.css';
@@ -53,9 +53,9 @@ const SearchBar = () => {
     };
 
     return (
-        <div className="search-container">
-            <div className="search-wrapper">
-                <Form className="search-form">
+        <div className="search-container px-5">
+            <div className="">
+                <Form className="">
                     <Form.Group>
                         <Form.Control
                             type="text"

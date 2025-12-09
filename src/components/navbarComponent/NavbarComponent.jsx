@@ -32,25 +32,25 @@ const BookingsModal = () => {
             <div className="p-6">
               <div className="flex flex-col space-y-3 gap-y-3">
                 <button 
-                  className="bg-blue-600 text-white py-3 px-4 rounded-xl hover:bg-blue-700 transition-colors font-medium"
+                  className="bg-blue-600 text-white py-3 px-4 !rounded-xl hover:bg-blue-700 transition-colors font-medium"
                   onClick={() => handleNavigation('/mybookings/available')}
                 >
                   Hotel Bookings
                 </button>
                 <button 
-                  className="bg-blue-600 text-white py-3 px-4 rounded-xl hover:bg-blue-700 transition-colors font-medium"
+                  className="bg-blue-600 text-white py-3 px-4 !rounded-xl hover:bg-blue-700 transition-colors font-medium"
                   onClick={() => handleNavigation('/myguidbookings/available')}
                 >
                   Guide Bookings
                 </button>
                 <button 
-                  className="bg-blue-600 text-white py-3 px-4 rounded-xl hover:bg-blue-700 transition-colors font-medium"
+                  className="bg-blue-600 text-white py-3 px-4 !rounded-xl hover:bg-blue-700 transition-colors font-medium"
                   onClick={() => handleNavigation('/myVehicleBooking/available')}
                 >
                   Transportation Bookings
                 </button>
                 <button 
-                  className="bg-blue-600 text-white py-3 px-4 rounded-xl hover:bg-blue-700 transition-colors font-medium"
+                  className="bg-blue-600 text-white py-3 px-4 !rounded-xl hover:bg-blue-700 transition-colors font-medium"
                   onClick={() => handleNavigation('/package-bookings')}
                 >
                   Package Bookings

@@ -19,8 +19,8 @@ const DestinationComponent = ({name, description, image1, image2, image3, image4
   };
 
   return (
-    <div className='destinationDescription'>
-      <div className="content">
+    <div className='destinationDescription mt-16'>
+      <div className="flex flex-col items-center xl:flex-row justify-center ">
         <div className="text-section">
           <div className="destination-header">
             <h1 className="destination-title">{name}</h1>
@@ -61,7 +61,7 @@ const DestinationComponent = ({name, description, image1, image2, image3, image4
           </div>
         </div>
 
-        <div className="image-section">
+        <div className='max-w-6xl xl:w-2xl' >
           <img src={selectedImage} alt="Main" className="main-image" />
           <div className="thumbnail-gallery">
             {images.map((image, index) => (

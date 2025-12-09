@@ -87,9 +87,9 @@ const AllHotels = () => {
 
     return (
         <div>
-            <div className="container py-5">
+            <div className="container py-5 mt-18">
                 <div className="card shadow-lg mb-5">
-                    <div className="card-body p-5">
+                    <div className="card-body">
                         <div className="text-center mb-4">
                             <h1 className="display-4 text-primary fw-bold mb-3">
                                 <i className="fas fa-hotel me-3"></i>

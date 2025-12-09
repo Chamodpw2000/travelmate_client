@@ -72,7 +72,7 @@ const RestaurantMainSection = ({
     return text.slice(0, maxLength) + '...';
   };
 
-  console.log("sssssssssssssssssssss",name)
+
 
   return (
     <div className="restaurant-main-section">
@@ -80,17 +80,17 @@ const RestaurantMainSection = ({
         <h1>{name}</h1>
       </div>
       
-      <Container className="py-3 border-bottom">
-        <Row className="align-items-center">
+      <Container className="py-3 border-bottom ">
+        <div className="">
           <Col lg="6" className="d-flex align-items-center">
             <h4 className="mb-0">{mainCategory}</h4>
           </Col>
           <Col lg="6" className="text-lg-end mt-2 mt-lg-0">
             {/* Category badges moved below */}
           </Col>
-        </Row>
+        </div>
         
-        <Row className="align-items-center mt-2">
+        <div className="flex flex-col mt-2 ">
           <Col lg="6">
             <div className="price-rating">
               {/* Price and rating moved */}
@@ -104,29 +104,49 @@ const RestaurantMainSection = ({
             </div>
           </Col>
           
-          <Col lg="6" className="text-lg-end mt-3 mt-lg-0 contact-info">
-            <div className="mb-2">
-              <FaLaptop className="me-2" />
-              <a href={website} target="_blank" rel="noopener noreferrer">
-                Visit Our Website
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-sm">
+            <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 group">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 group-hover:bg-blue-200 transition-colors duration-300">
+                <FaLaptop className="text-blue-600 text-lg" />
+              </div>
+              <a 
+                href={website} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 no-underline"
+              >
+                Visit Website
               </a>
             </div>
-            <div className="mb-2">
-              <FaPhone className="me-2" />
-              <a href={`tel:${contactNumber}`}>{contactNumber}</a>
+            
+            <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 group">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 group-hover:bg-green-200 transition-colors duration-300">
+                <FaPhone className="text-green-600 text-lg" />
+              </div>
+              <a 
+                href={`tel:${contactNumber}`}
+                className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 no-underline"
+              >
+                {contactNumber}
+              </a>
             </div>
-            <div>
-              <FaMapMarkerAlt className="me-2" />
+            
+            <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 group">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 group-hover:bg-red-200 transition-colors duration-300">
+                <FaMapMarkerAlt className="text-red-600 text-lg" />
+              </div>
               <a
                 href={`https://maps.google.com/?q=${address}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-gray-700 hover:text-red-600 font-medium transition-colors duration-300 no-underline truncate flex-1"
+                title={address}
               >
                 {address}
               </a>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
         
         <hr className="divider" />
       </Container>
