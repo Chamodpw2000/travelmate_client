@@ -12,6 +12,7 @@ import RestaurantCategoriesCards from "../../components/RestaurantCategoriesCard
 import PrePlannedTripsInLandingPage from "../../components/prePlannedTripsInLandingPage/PrePlannedTripsInLandingPage";
 import DestinationsInHomePage from "../../components/destinationsInHomePage/DestinationsInHomePage";
 import TransportServisersInLandingPage from "../../components/transportServicersInLandingPage/TransportServisersInLandingPage";
+import VillasInLandingPage from '../../components/VillaInLandingPage/VillaInLandingPage';
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <AiTripPlanning />
       <HotelsInLandingPage />
       <RestaurantsInLandingPage />
+      <VillasInLandingPage />
       <TransportServisersInLandingPage />
       <GuideList />
       {/* <Activities /> */}
