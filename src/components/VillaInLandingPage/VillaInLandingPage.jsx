@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import VillaCard from "../VillaCard/VillaCard";
+import VillaCard from "../Villacard/VillaCard";
 import { ClientContext } from "../../context/ClientContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
