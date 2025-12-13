@@ -275,7 +275,7 @@ const ChatInterface = ({ setOpenChat }) => {
             >
               <option value=''>🌐 All</option>
               <option value='Guides'>🗺️ Guides</option>
-              <option value='Hotels'>🏨 Hotels</option>
+              <option value='Accommodations'>🏨 Hotels</option>
               <option value='Restaurants'>🍴 Restaurants</option>
               <option value='Destinations'>✈️ Destinations</option>
               <option value='Transportation'>🚕 Transport</option>
