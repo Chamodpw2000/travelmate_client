@@ -243,7 +243,7 @@ const TransportPage = () => {
                         {/* Availability Check - Right Side */}
                         <div className="col-md-4">
                             <div className="availability-check-container p-3 bg-light rounded">
-                                <h4 className="mb-3">
+                                <h4 className="mb-3 flex gap-x-2 items-center justify-start">
                                     <FaCalendarAlt className="me-2 text-primary" />
                                     Check Availability
                                 </h4>
