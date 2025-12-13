@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import logo from '../../assets/logo.png'
-import logo2 from '../../../src/assets/TravalMateLogo2.png'
+import logo from '../../assets/Logo.png'
+import logo2 from '../../assets/TravalMateLogo2.png'
 import { IoSendSharp } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import axios from 'axios';
