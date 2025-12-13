@@ -56,6 +56,7 @@ import AvailableVehicleBookings from './pages/vehicalBooking/AvailableVehicleBoo
 import CompletedVehicleBookings from './pages/vehicalBooking/CompletedVehicleBookings'
 import VehicleBookings from './pages/vehicalBooking/MyVehicleBookings'
 import CancledVehicleBookings from './pages/vehicalBooking/CancledVehicleBookings'
+import AddAVilla from './pages/addVilla/addVilla'
 
 import Hospital from './pages/hospitals/Hospital'
 
@@ -133,11 +134,14 @@ function App() {
             <Route path="available" element={<AvailableGuidBookings />} />
             <Route path="canclled" element={<CancledGuidBookings />} />
             <Route path="completed" element={<CompletedGuidBookings />} />
-
+            
 
 
 
           </Route>
+
+          <Route path="add-villa" element={<AddAVilla />} />
+
 
           <Route path="/allguides" element={<AllGuides />} />
 
