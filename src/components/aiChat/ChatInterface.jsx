@@ -113,7 +113,7 @@ const ChatInterface = ({ setOpenChat }) => {
 
     try {
       // Send message to backend
-      const response = await axios.post('http://localhost:3000/travelmate/chat', {
+      const response = await axios.post('https://travelmate-backend-zuqb.onrender.com/travelmate/chat', {
         message: inputValue,
         context: context
        
