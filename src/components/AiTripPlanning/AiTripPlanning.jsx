@@ -1,43 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AiTripPlanning.css'
 import TripPlanning_Img from '../../assets/AiTripPlanning.png'
+import ChatInterface from '../aiChat/ChatInterface'
 
 const AiTripPlanning = () => {
+  const [openChat , setOpenChat] = useState();
   return (
 
 
-    <div className=" w-full bg-red-100">
+    <div className=" w-full bg-red-100 relative">
 
-<div className='tripPlanning  d-flex'>
-      <div className="tripPlanning-left">
-        <span className="ai-badge">Powered by AI</span>
-        
-        <h1 className="main-title">
-          Explore TravelMate<br />
-        with AI
-        </h1>
-        
-        <div className="subtitle">
-          <h2>Get personalized travel</h2>
-          <h2>itineraries in minutes,</h2>
-          <h2>crafted by AI with real</h2>
-          <h2>traveler insights.</h2>
+      {openChat && <ChatInterface setOpenChat={setOpenChat} />}
+
+      <div className='tripPlanning  d-flex'>
+        <div className="tripPlanning-left">
+          <span className="ai-badge">Powered by AI</span>
+
+          <h1 className="main-title">
+            Explore TravelMate<br />
+            with AI
+          </h1>
+
+          <div className="subtitle">
+            <h2>Get personalized travel</h2>
+            <h2>itineraries in minutes,</h2>
+            <h2>crafted by AI with real</h2>
+            <h2>traveler insights.</h2>
+          </div>
+
+          <button className="plan-trip-btn" onClick={() => {setOpenChat(true) }}>
+            Start Chat !
+          </button>
         </div>
-        
-        <button className="plan-trip-btn">
-          Comming Soon !
-        </button>
+
+        <div className="tripPlanning-right">
+          <img src={TripPlanning_Img} alt="AI Trip Planning" />
+        </div>
       </div>
 
-      <div className="tripPlanning-right">
-        <img src={TripPlanning_Img} alt="AI Trip Planning" />
-      </div>
-    </div>
 
 
-      
     </div>
-   
+
   )
 }
 

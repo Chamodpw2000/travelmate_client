@@ -59,7 +59,7 @@ import CancledVehicleBookings from './pages/vehicalBooking/CancledVehicleBooking
 import AddAVilla from './pages/addVilla/addVilla'
 
 import Hospital from './pages/hospitals/Hospital'
-import Test from './pages/Hospital'
+
 
 
 function App() {
