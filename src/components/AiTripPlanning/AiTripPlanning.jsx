@@ -28,9 +28,13 @@ const AiTripPlanning = () => {
             <h2>traveler insights.</h2>
           </div>
 
-          <button className="plan-trip-btn" onClick={() => {setOpenChat(true) }}>
+          <button className="plan-trip-btn opacity-50 !cursor-not-allowed hover:opacity-50" disabled={true} onClick={() => {setOpenChat(true) }}>
             Start Chat !
           </button>
+          
+          <p className="mt-3 text-sm text-gray-600">
+            ⚠️ This feature is currently unavailable due to high deployment costs.
+          </p>
         </div>
 
         <div className="tripPlanning-right">
