@@ -24,7 +24,7 @@ const Home = () => {
       <AiTripPlanning />
       <HotelsInLandingPage />
       <RestaurantsInLandingPage />
-      <VillasInLandingPage />
+      {/* <VillasInLandingPage /> */}
       <TransportServisersInLandingPage />
       <GuideList />
       {/* <Activities /> */}
