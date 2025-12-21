@@ -38,7 +38,7 @@ const Booking = ({ accName, roomName, roomCount, price, toDate, fromDate, daysCo
                     </small>
                 </div>
                 <div className="d-flex align-items-center">
-                    {status === "Booked" && (
+                    {/* {status === "Booked" && (
                         <button
                             className="btn btn-danger btn-sm me-3"
                             onClick={() => cancleBooking(id)}
@@ -46,7 +46,7 @@ const Booking = ({ accName, roomName, roomCount, price, toDate, fromDate, daysCo
                             <i className="fas fa-times-circle me-2"></i>
                             Cancel Booking
                         </button>
-                    )}
+                    )} */}
                     <span className={`badge ${status === 'Booked' ? 'bg-success' : 'bg-secondary'}`}>
                         {status}
                     </span>
@@ -60,31 +60,37 @@ const Booking = ({ accName, roomName, roomCount, price, toDate, fromDate, daysCo
                         <div className="booking-details">
                             <div className="detail-item mb-3">
                                 <i className="fas fa-bed text-primary me-2"></i>
-                                <span className="fw-bold">Rooms:</span> {roomCount}
+                                <span className="fw-bold mr-2">Rooms:</span> {roomCount}
                             </div>
                             <div className="detail-item mb-3">
                                 <i className="fas fa-dollar-sign text-primary me-2"></i>
-                                <span className="fw-bold">Price:</span> ${price}
+                                <span className="fw-bold mr-2">Price per Room:</span> ${price}
                             </div>
-                            <div className="detail-item mb-3">
+                            <div className="detail-item mb-3 d-flex align-items-center">
                                 <i className="fas fa-calendar-alt text-primary me-2"></i>
-                                <span className="fw-bold">Check-in:</span> {moment(fromDate).format('MMMM Do YYYY')}
+                                <div className='flex gap-x-2'>
+                                    <span className="fw-bold d-block">Check-in:</span>
+                                    <span className="text-dark">{fromDate}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="booking-details">
-                            <div className="detail-item mb-3">
+                            <div className="detail-item mb-3 d-flex align-items-center">
                                 <i className="fas fa-calendar-check text-primary me-2"></i>
-                                <span className="fw-bold">Check-out:</span> {moment(toDate).format('MMMM Do YYYY')}
+                                <div className='flex gap-x-2'>
+                                    <span className="fw-bold d-block">Check-out:</span>
+                                    <span className="text-dark">{toDate}</span>
+                                </div>
                             </div>
                             <div className="detail-item mb-3">
                                 <i className="fas fa-clock text-primary me-2"></i>
-                                <span className="fw-bold">Duration:</span> {daysCount} days
+                                <span className="fw-bold mr-2">Duration:</span> {daysCount} days
                             </div>
                             <div className="detail-item mb-3">
                                 <i className="fas fa-info-circle text-primary me-2"></i>
-                                <span className="fw-bold">Total Amount:</span> ${price * roomCount * daysCount}
+                                <span className="fw-bold mr-2">Total Amount:</span> ${price}
                             </div>
                         </div>
                     </div>

@@ -86,27 +86,28 @@ const ConBookHotel = () => {
     };
 
     return (
-        <div className="container-fluid py-5 mt-20" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
-            <div className="container">
-                <div className="card shadow-lg">
-                    <div className="card-body p-0">
-                        <div className="row g-0">
-                            <div className="col-lg-6" style={{ height: '500px' }}>
+        <div className="container-fluid py-5 mt-20 " style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
+            <div className="flex lg:p-12 flex-col lg:flex-row ">
+                <div className="card shadow-lg ">
+                    <div className="p-0">
+                        <div className="row g-0 " style={{ minHeight: '600px' }}>
+                            <div className="col-lg-6" style={{ position: 'relative' }}>
                                 {room?.images && room.images.length > 0 ? (
                                     <div
                                         id="roomImageCarousel"
-                                        className="carousel slide h-100"
+                                        className="carousel slide"
                                         data-bs-ride="carousel"
                                         data-bs-interval="3000"
                                         ref={carouselRef}
+                                        style={{ height: '100%', width: '100%' }}
                                     >
-                                        <div className="carousel-inner h-100">
+                                        <div className="carousel-inner" style={{ height: '100%' }}>
                                             {room.images.map((image, index) => (
-                                                <div key={index} className={`carousel-item h-100 ${index === 0 ? 'active' : ''}`}>
+                                                <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`} style={{ height: '100%' }}>
                                                     <img
                                                         src={image}
-                                                        className="d-block w-100 h-100 rounded-start"
-                                                        style={{ objectFit: 'cover', objectPosition: 'center' }}
+                                                        className="w-full h-full object-cover"
+                                                        style={{ objectFit: 'cover', objectPosition: 'center', height: '100%', width: '100%' }}
                                                         alt={`Room view ${index + 1}`}
                                                     />
                                                 </div>
@@ -141,8 +142,8 @@ const ConBookHotel = () => {
                                 ) : (
                                     <img
                                         src="https://picsum.photos/800/600"
-                                        className="img-fluid rounded-start w-100 h-100"
-                                        style={{ objectFit: 'cover' }}
+                                        className="w-full h-full object-cover"
+                                        style={{ objectFit: 'cover', objectPosition: 'center', height: '100%', width: '100%', position: 'absolute', top: 0, left: 0 }}
                                         alt="room"
                                     />
                                 )}

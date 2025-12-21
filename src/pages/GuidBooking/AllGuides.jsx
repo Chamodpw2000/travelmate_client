@@ -61,7 +61,7 @@ const AllGuides = () => {
                 <div className="card shadow-lg mb-5">
                     <div className="card-body">
                         <div className="text-center mb-4">
-                            <h1 className="display-4 text-primary fw-bold mb-3">
+                            <h1 className="display-4 text-primary fw-bold mb-3 flex items-center justify-center">
                                 <FaUserTie className="me-3" />
                                 Find Your Perfect Travel Guide
                             </h1>
@@ -88,7 +88,7 @@ const AllGuides = () => {
                             <div className="col-md-4">
                                 <div className="card shadow-sm">
                                     <div className="card-body">
-                                        <h4 className="card-title mb-4">
+                                        <h4 className="card-title mb-4 flex ">
                                             <FaUserTie className="me-2 text-primary" />
                                             Check Guide Availability
                                         </h4>
@@ -119,7 +119,7 @@ const AllGuides = () => {
 
                 {availableGuides.length > 0 && (
                     <div className="guide-list container py-4">
-                        <h3 className="text-primary mb-4 border-bottom pb-3">
+                        <h3 className="text-primary mb-4 border-bottom pb-3 flex">
                             <FaUserTie className="me-2" />
                             Available Guides For Selected Dates
                         </h3>
@@ -131,7 +131,7 @@ const AllGuides = () => {
                                          onClick={() => navigate("/conguidebook", 
                                              { state: { from: fromDate, to: toDate, guide: guide } })}>
                                         <img
-                                            src={guide.image || 'https://picsum.photos/300/200'}
+                                            src={guide.cardImage}
                                             className="card-img-top"
                                             alt={guide.name}
                                             style={{ height: '200px', objectFit: 'cover' }}

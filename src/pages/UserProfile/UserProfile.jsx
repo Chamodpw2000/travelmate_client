@@ -247,12 +247,13 @@ const UserProfile = () => {
                 />
                 {editMode && (
                   <div className="position-absolute bottom-0 end-0">
-                    <div
+                    <label
                       htmlFor="profilePicInput"
-                      className="bg-black w-8  items-center justify-center flex aspect-square rounded-full"
+                      className=" w-8  items-center justify-center flex aspect-square rounded-full"
+                      style={{ cursor: 'pointer' }}
                     >
-                      <FaEdit className="text-white" />
-                    </div>
+                      <FaEdit className="text-black  w-8 h-8" />
+                    </label>
                     <input
                       id="profilePicInput"
                       type="file"
@@ -283,16 +284,16 @@ const UserProfile = () => {
               <div className="flex justify-content-center mb-2">
                 {!editMode ? (
                   <div className="flex justify-content-center mb-2 gap-2">
-                    <button className="btn btn-danger" onClick={handleEditToggle}>
+                    <button className="btn btn-primary" onClick={handleEditToggle}>
                     <div className="flex gap-x-2">
                       <FaEdit className="me-2" /> Edit Profile
                     </div>
                   </button>
-                  <button className="btn btn-danger" onClick={handleAddVilla}>
+                  {/* <button className="btn btn-danger" onClick={handleAddVilla}>
                     <div className="flex gap-x-2">
                       <FaEdit className="me-2" /> Add a Villa
                     </div>
-                  </button>
+                  </button> */}
                   </div>
                   
                 ) : (

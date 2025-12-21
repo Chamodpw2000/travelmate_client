@@ -18,7 +18,7 @@ const BookHotel = () => {
     const [toDate, setToDate] = useState();
     const [text, setText] = useState();
 
-    const bookingHandler = () => { }
+ 
 
     const checkAvailability = (newFromDate, newToDate, accommodation) => {
         const newAvailableRooms = [];
@@ -109,7 +109,7 @@ const BookHotel = () => {
                                 <div className="col-md-4 mb-4">
                                     <div className="card shadow-sm">
                                         <div className="card-body">
-                                            <h4 className="card-title mb-4">
+                                            <h4 className="card-title flex items-center justify-start mb-4">
                                                 <FaCalendarAlt className="me-2 text-primary" />
                                                 Check Availability
                                             </h4>
@@ -156,21 +156,54 @@ const BookHotel = () => {
                             <i className="fas fa-bed me-2"></i>
                             Available Rooms
                         </h3>
-                        {accommodation.rooms.map((room, index) => (
-                            <HotelRoom
-                                key={room.id}
-                                name={room.name}
-                                type={room.grade}
-                                price={room.price}
-                                capacity={room.capacity}
-                                available={availableRooms[index]?.available}
-                                id={room.id}
-                                fromDate={fromDate}
-                                toDate={toDate}
-                                hid={accommodation.id}
-                               images={room.images?.length > 0 ? room.images : undefined}
-                            />
-                        ))}
+                        {accommodation.rooms.length === 0 || accommodation.rooms.every(room => room.total === 0) ? (
+                            <div className="card shadow-lg">
+                                <div className="card-body text-center p-5">
+                                    <i className="fas fa-ban text-danger mb-3" style={{ fontSize: '4rem' }}></i>
+                                    <h4 className="text-danger mb-3">No Rooms Available</h4>
+                                    <p className="text-muted">
+                                        Unfortunately, this hotel currently has no rooms available. 
+                                        Please check back later or explore other accommodations.
+                                    </p>
+                                </div>
+                            </div>
+                        ) : isAvailable && availableRooms.length > 0 && availableRooms.every(room => room.available === 0) ? (
+                            <div className="card shadow-lg">
+                                <div className="card-body text-center p-5">
+                                    <i className="fas fa-ban text-danger mb-3" style={{ fontSize: '4rem' }}></i>
+                                    <h4 className="text-danger mb-3">No Rooms Available</h4>
+                                    <p className="text-muted">
+                                        Unfortunately, there are no rooms available for the selected dates 
+                                        ({fromDate} to {toDate}). Please try different dates.
+                                    </p>
+                                    <button 
+                                        className="btn btn-primary mt-3"
+                                        onClick={() => {
+                                            setIsAvailable(false);
+                                            setText("");
+                                        }}
+                                    >
+                                        Select Different Dates
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            accommodation.rooms.map((room, index) => (
+                                <HotelRoom
+                                    key={room.id}
+                                    name={room.name}
+                                    type={room.grade}
+                                    price={room.price}
+                                    capacity={room.capacity}
+                                    available={availableRooms[index]?.available}
+                                    id={room.id}
+                                    fromDate={fromDate}
+                                    toDate={toDate}
+                                    hid={accommodation.id}
+                                   images={room.images?.length > 0 ? room.images : undefined}
+                                />
+                            ))
+                        )}
                     </div>
                 )}
             </div>

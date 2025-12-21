@@ -26,7 +26,7 @@ const ConGuidPage = () => {
 
     const StarRating = ({ rating }) => {
         return (
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center ">
                 {[...Array(5)].map((_, index) => (
                     <FaStar
                         key={index}
@@ -92,12 +92,12 @@ const ConGuidPage = () => {
     };
 
     return (
-        <div className='container py-5'>
+        <div className='container py-5 mt-[80px]'>
             <div className="card border-0 shadow-lg mb-5">
                 <div className="row g-0">
                     <div className="col-md-6">
                         <img
-                            src={guid?.imageUrl || "https://picsum.photos/800/600"}
+                            src={guid?.cardImage || "https://picsum.photos/800/600"}
                             className="img-fluid rounded-start h-100 object-fit-cover"
                             alt={guid?.name}
                         />
@@ -189,7 +189,7 @@ const ConGuidPage = () => {
 
             <div className='card shadow-lg bg-light my-4'>
     <div className='card-body text-center p-4'>
-        <h3 className='text-primary mb-3'>
+        <h3 className='text-primary mb-3 flex'>
             <FaCalendarAlt className="me-2" />
             Booking Details
         </h3>
@@ -197,13 +197,9 @@ const ConGuidPage = () => {
             Book <strong>{guid?.name}</strong> from <strong>{data.from}</strong> to <strong>{data.to}</strong>
         </p>
         <button 
-            className="btn btn-warning btn-lg px-5 py-3 fw-bold animate-pulse"
+            className="px-5 py-3 mx-auto flex items-center justify-center border-2 border-primary !rounded-lg hover:bg-blue-400 hover:text-white transition duration-300"
             onClick={bookingHandler}
-            style={{
-                fontSize: '1.2rem',
-                boxShadow: '0 4px 15px rgba(255, 193, 7, 0.3)',
-                transition: 'all 0.3s ease'
-            }}
+           
         >
             <FaCalendarAlt className="me-2" onClick={{bookingHandler}} /> 
             Book Now

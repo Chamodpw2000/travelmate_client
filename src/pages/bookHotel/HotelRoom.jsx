@@ -15,15 +15,15 @@ const HotelRoom = ({ name, type, price, capacity, available, id, fromDate, toDat
 
     return (
         <div className="container my-4">
-            <div className="card shadow-lg" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
-                <div className="row g-0">
-                    <div className="col-md-4">
+            <div className="card shadow-lg" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)', height: '340px', minHeight: '340px' }}>
+                <div className="row g-0 h-100">
+                    <div className="col-md-4 h-100">
                         <div className="position-relative h-100">
                             <img
                                 src={images?.length>0 ? images[0] : "https://picsum.photos/300/200"}
-                                className="img-fluid rounded-start h-100 w-100 object-fit-cover"
+                                className="img-fluid rounded-start object-fit-cover"
                                 alt="room"
-                                style={{ minHeight: '300px' }}
+                                style={{ height: '100%', width: '100%', objectFit: 'cover', minHeight: '300px', maxHeight: '340px' }}
                             />
                             {available > 0 && (
                                 <div className="position-absolute top-0 start-0 m-3">
@@ -87,10 +87,10 @@ const HotelRoom = ({ name, type, price, capacity, available, id, fromDate, toDat
                                     <i className="fas fa-bookmark me-2"></i>
                                     Book Now
                                 </button>
-                                <button className="btn btn-outline-primary px-4 py-2">
+                                {/* <button className="btn btn-outline-primary px-4 py-2">
                                     <i className="fas fa-info-circle me-2"></i>
                                     More Details
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>

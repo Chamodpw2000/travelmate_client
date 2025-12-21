@@ -172,7 +172,7 @@ const GuidPage = () => {
                 <div className="col-md-4 mb-4">
                     <div className="card shadow-sm">
                         <div className="card-body">
-                            <h4 className="card-title mb-4">
+                            <h4 className="card-title mb-4 flex">
                                 <FaCalendarAlt className="me-2 text-primary" />
                                 Check Availability
                             </h4>

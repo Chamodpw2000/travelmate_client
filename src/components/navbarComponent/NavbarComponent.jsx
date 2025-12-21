@@ -49,12 +49,12 @@ const BookingsModal = () => {
                 >
                   Transportation Bookings
                 </button>
-                <button 
+                {/* <button 
                   className="bg-blue-600 text-white py-3 px-4 !rounded-xl hover:bg-blue-700 transition-colors font-medium"
                   onClick={() => handleNavigation('/package-bookings')}
                 >
                   Package Bookings
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

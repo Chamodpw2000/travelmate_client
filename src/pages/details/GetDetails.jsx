@@ -62,10 +62,20 @@ const GetDetails = () => {
             console.log("Profile updated successfully", response.data);
             if(response.data.success){
                 localStorage.setItem('auth-token', response.data.token);
+                localStorage.setItem('doc_id', id);
                 console.log(response.data.token);
                 
+                // Fetch and store user data (same as sign-in flow)
+                const user = await axios.get('https://travelmate-backend-zuqb.onrender.com/user/get-user', {
+                    headers: {
+                        'Authorization': `Bearer ${response.data.token}`
+                    }
+                });
+                console.log("User data fetched:", user.data.user);
+                localStorage.setItem('user', JSON.stringify(user.data.user));
     }
-            navigate('/')
+            navigate('/');
+            window.location.reload();
         } catch (error) {
             console.log("Error updating profile", error);
         }
@@ -73,7 +83,7 @@ const GetDetails = () => {
 
     return (
         <header>
-            <div className="d-flex justify-content-center align-items-center vh-100">
+            <div className="d-flex justify-content-center align-items-center h-full mt-[120px] mb-[100px]">
                 <div
                     className="d-flex justify-content-center align-items-center"
                     style={{ width: '100%' }}
